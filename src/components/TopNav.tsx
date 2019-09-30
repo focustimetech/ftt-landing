@@ -1,12 +1,8 @@
 import * as React from 'react'
 
-interface IProps {
-    data: string
-}
-
-const TopNav = (props: IProps) => {
+const TopNav = () => {
     return (
-        <nav id='topnav' className='topnav'><h6>{props.data}</h6></nav>
+        <nav id='topnav' className='topnav'></nav>
     )
 }
 
