@@ -1,12 +1,20 @@
 import '../assets/styles/main.scss'
 
+// Sections
+import Hero from './Sections/Hero'
+
+// Components
+import TopNav from './TopNav'
+
 import * as React from 'react'
-import { HelloWorld } from './HelloWorld'
 
 class App extends React.Component {
     render() {
         return (
-            <HelloWorld />
+            <>
+                <TopNav />
+                <Hero />
+            </>
         )
     }
 }

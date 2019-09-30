@@ -1,0 +1,12 @@
+.section {
+    width: 100vw;
+
+    &.--full-height {
+        min-height: 100vh;
+    }
+
+    &__inner {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
