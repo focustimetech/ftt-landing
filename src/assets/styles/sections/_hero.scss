@@ -1,15 +1,16 @@
 .hero_section {
     position: relative;
-    color: $on-primary;
     overflow: hidden;
+    text-align: center;
 
     .hero_image {
         min-height: 200vh;
-        background-image: url('/src/assets/images/nicole-honeywill-YLUvemTiRtk-unsplash.jpg');
+        background-image: url('../src/assets/images/nicole-honeywill-YLUvemTiRtk-unsplash.jpg');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 100%;
+        background-size: cover;
         background-attachment: fixed;
+        pointer-events: none;
     }
 
     .section__inner {
@@ -17,5 +18,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .focus {
+        font-family: 'CeraProBold';
+        font-size: 10rem;
+        margin-bottom: 1rem;
     }
 }

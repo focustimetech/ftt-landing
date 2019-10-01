@@ -1,6 +1,10 @@
 import * as React from 'react'
 
-const TopNav = () => {
+interface IProps {
+    onHero: boolean
+}
+
+const TopNav = (props: IProps) => {
     return (
         <nav id='topnav' className='topnav'></nav>
     )

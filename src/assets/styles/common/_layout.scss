@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'CeraProMedium';
+    src: url('../src/assets/fonts/cera-pro/cerapro-bold-webfont.woff');
+}
+
+@font-face {
+    font-family: 'CeraProBold';
+    src: url('../src/assets/fonts/cera-pro/cerapro-bold-webfont.woff');
+}
+
+body {
+    font-family: 'CeraProMedium';
+}
+
 .section {
     width: 100vw;
 
@@ -7,6 +21,16 @@
 
     &__inner {
         margin: 0 auto;
-        width: 100%;
     }
+}
+
+.blend-layer {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    clip: rect(auto, auto, auto, auto);
 }
