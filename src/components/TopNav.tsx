@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 
+import { Button } from './Button'
+
 interface IProps {
     onHero?: boolean
 }
@@ -12,6 +14,7 @@ const TopNav = (props: IProps) => {
             <ul className='topnav__menu_list'>
                 <li>What We Do</li>
                 <li>Our Story</li>
+                <Button>Book a Demo</Button>
             </ul>
         </nav>
     )

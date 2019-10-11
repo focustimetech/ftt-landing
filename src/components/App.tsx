@@ -2,8 +2,9 @@ import * as React from 'react'
 import '../assets/styles/main.scss'
 
 // Sections
-import About from './Sections/About'
 import Hero from './Sections/Hero'
+import WhatWeDo from './Sections/WhatWeDo'
+
 
 // Components
 import TopNav from './TopNav'
@@ -13,7 +14,7 @@ class App extends React.Component {
         return (
             <>
                 <Hero />
-                <About />
+                <WhatWeDo />
             </>
         )
     }

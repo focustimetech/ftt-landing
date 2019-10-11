@@ -1,13 +1,13 @@
 import * as React from 'react'
 
-const About = () => {
+const WhatWeDo = () => {
     return (
-        <section className='section'>
+        <section className='section --fit-content'>
             <div className='section__inner'>
-                <p>New section</p>
+                <h1>What We Do</h1>
             </div>
         </section>
     )
 }
 
-export default About
+export default WhatWeDo
