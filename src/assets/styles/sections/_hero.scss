@@ -1,6 +1,7 @@
 .hero_section {
     background: $primary-gradient;
     color: $on-primary;
+    padding-top: 6rem;
 
     .section__inner {
         font-size: 3em;
@@ -28,6 +29,7 @@
         &__subheader {
             color: $secondary;
             line-height: 4rem;
+            min-height: 4em;
         }
     }
 }
