@@ -1,0 +1,22 @@
+.testimonial {
+    padding: 2rem 0;
+
+    &__inner {
+        padding: 0 3rem;
+        display: flex;
+    }
+
+    &__image {
+        flex-shrink: 1;
+        width: 6em;
+        height: 6em;
+
+        img {
+            border-radius: 1rem;
+        }
+    }
+
+    &__quote {
+        font-style: italic;
+    }
+}
