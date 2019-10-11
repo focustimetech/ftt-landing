@@ -1,15 +1,24 @@
 @font-face {
-    font-family: 'CeraProMedium';
-    src: url('../src/assets/fonts/cera-pro/cerapro-bold-webfont.woff');
+    font-family: 'CeraPro';
+    font-weight: 400;
+    src: url('../src/assets/fonts/cera-pro/cerapro-regular-webfont.woff');
 }
 
 @font-face {
-    font-family: 'CeraProBold';
+    font-family: 'CeraPro';
+    font-weight: 500;
+    src: url('../src/assets/fonts/cera-pro/cerapro-medium-webfont.woff');
+}
+
+@font-face {
+    font-family: 'CeraPro';
+    font-weight: 600;
     src: url('../src/assets/fonts/cera-pro/cerapro-bold-webfont.woff');
 }
 
 body {
-    font-family: 'CeraProMedium';
+    font-family: 'CeraPro';
+    font-weight: 500;
     font-size: 18px;
 }
 
@@ -44,6 +53,6 @@ body {
 }
 
 h1 {
-    font-family: 'CeraProBold';
+    font-weight: 600;
     font-size: 3em;
 }
