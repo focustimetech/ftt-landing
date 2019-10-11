@@ -12,7 +12,6 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <TopNav onHero={false}/>
                 <Hero />
                 <About />
             </>

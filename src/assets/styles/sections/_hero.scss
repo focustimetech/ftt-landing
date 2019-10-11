@@ -6,6 +6,16 @@
         font-size: 3em;
     }
 
+    .hero_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+
+        .hero_image {
+            width: 100%;
+        }
+    }
+
     .focus {
         font-size: 2em;
         line-height: 8rem;
@@ -17,6 +27,7 @@
 
         &__subheader {
             color: $secondary;
+            line-height: 4rem;
         }
     }
 }
