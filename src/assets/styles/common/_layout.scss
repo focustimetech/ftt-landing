@@ -13,14 +13,20 @@ body {
 }
 
 .section {
-    width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 2rem 0;
 
-    &.--full-height {
-        min-height: 100vh;
+    &.--fit-content {
+        min-height: unset;
     }
 
     &__inner {
-        margin: 0 auto;
+        // -- margin: 0 auto;
+        padding: 0 6rem;
     }
 }
 
@@ -33,4 +39,8 @@ body {
     left: 0;
     pointer-events: none;
     clip: rect(auto, auto, auto, auto);
+}
+
+h1 {
+    font-family: 'CeraProBold';
 }
