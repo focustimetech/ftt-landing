@@ -14,6 +14,8 @@ const TopNav = (props: IProps) => {
             <ul className='topnav__menu_list'>
                 <li>What We Do</li>
                 <li>Our Story</li>
+                <li>Spotlight</li>
+                <li><a className='link' href='focustime.ca/your-school'>Sign In</a></li>
                 <Button>Book a Demo</Button>
             </ul>
         </nav>
