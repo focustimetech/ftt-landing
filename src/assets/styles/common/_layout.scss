@@ -29,14 +29,15 @@ body {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
-    padding: 2rem 0;
+    padding: 6rem 0;
 
     &.--fit-content {
         min-height: unset;
     }
 
     &__inner {
-        // -- margin: 0 auto;
+        margin: 0 auto;
+        width: 100%;
         padding: 0 6rem;
     }
 }
@@ -55,4 +56,25 @@ body {
 h1 {
     font-weight: 600;
     font-size: 3em;
+}
+
+.flexbox {
+    display: flex;
+    flex-flow: row nowrap;
+
+    & > div {
+        flex: 1;
+
+        & > img {
+            width: 100%;
+        }
+
+        &:first-child {
+            margin-right: 1rem;
+        }
+
+        &:last-child {
+            margin-left: 1rem;
+        }
+    }
 }

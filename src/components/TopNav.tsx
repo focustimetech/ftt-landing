@@ -15,7 +15,7 @@ const TopNav = (props: IProps) => {
                 <li>What We Do</li>
                 <li>Our Story</li>
                 <li>Spotlight</li>
-                <li><a className='link' href='focustime.ca/your-school'>Sign In</a></li>
+                <li><a className='link' href='your-school'>Sign In</a></li>
                 <Button onPrimary>Book a Demo</Button>
             </ul>
         </nav>

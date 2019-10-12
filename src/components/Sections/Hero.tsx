@@ -19,7 +19,7 @@ class Hero extends React.Component {
             <section id='hero' className={classNames('section', 'hero_section')}>
                 <TopNav onHero />
                 <div className='section__inner'>
-                    <div className='hero_container'>
+                    <div className='flexbox'>
                         <div>
                             <div className='focus'>
                                 <h1 className='focus__header'>Focus.</h1>
