@@ -2,15 +2,24 @@
     font-size: 1.25rem;
     padding: 0.625em 1em;
     color: $on-secondary;
-    background: $secondary-gradient;
     border-radius: 2px;
     font-weight: 600;
+    color: inherit;
+
+    &.--on-primary {
+        background: $secondary-gradient;
+        color: $on-secondary;
+    }
 }
 
 .link {
-    color: $secondary;
-    font-weight: 500;
+    color: $primary;
+    font-weight: 600;
     text-decoration: none;
+
+    &.--on-primary {
+        color: $secondary;
+    }
 
     &::after {
         content: "→";

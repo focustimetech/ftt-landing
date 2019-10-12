@@ -28,7 +28,7 @@ class Hero extends React.Component {
                                 </h6>
                             </div>
                             <h6>We create platforms where educators and students can share information and get smarter together.</h6>
-                            <Button>Book a Demo</Button>
+                            <Button onPrimary>Book a Demo</Button>
                         </div>
                         <div><img className='hero_image' src='/src/assets/images/hero/undraw_new_ideas_jdea (1).svg'/></div>
                     </div>
