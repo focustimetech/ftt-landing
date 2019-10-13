@@ -10,10 +10,34 @@ import Testimonial from './Testimonial'
 // Components
 import TopNav from './TopNav'
 
-class App extends React.Component {
+interface IState {
+    showTopNav: boolean
+}
+
+class App extends React.Component<{}, IState> {
+    state: IState = {
+        showTopNav: false
+    }
+
+    onScroll = (event: any) => {
+        if (window.pageYOffset > 500 /* && window.pageYOffset < 900*/ )
+            this.setState({ showTopNav: true });
+        else
+            this.setState({ showTopNav: false })
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll, false)
+    }
+
     render() {
         return (
             <>
+                <TopNav visible={this.state.showTopNav} />
                 <Hero />
                 <WhatWeDo />
                 <OurStory />

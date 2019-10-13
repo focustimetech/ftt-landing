@@ -5,11 +5,12 @@ import { Button } from './Button'
 
 interface IProps {
     onHero?: boolean
+    visible: boolean
 }
 
 const TopNav = (props: IProps) => {
     return (
-        <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero})}>
+        <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero}, {'--visible': props.visible})}>
             <div className='topnav__logo'><img src={`/src/assets/images/${props.onHero ? 'ft-white.png' : 'ft-blue.png'}`} /></div>
             <ul className='topnav__menu_list'>
                 <li>What We Do</li>

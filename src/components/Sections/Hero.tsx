@@ -17,7 +17,7 @@ class Hero extends React.Component {
     render() {
         return (
             <section id='hero' className={classNames('section', 'hero_section')}>
-                <TopNav onHero />
+                <TopNav onHero visible />
                 <div className='section__inner'>
                     <div className='flexbox'>
                         <div>
