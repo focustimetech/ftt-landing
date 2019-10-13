@@ -62,6 +62,11 @@ body {
     }
 }
 
+.section__inner,
+.testimonial__inner {
+    max-width: $max-width;
+}
+
 h1 {
     font-weight: 600;
     font-size: 3em;

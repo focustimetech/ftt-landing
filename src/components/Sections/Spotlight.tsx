@@ -2,7 +2,7 @@ import * as React from 'react'
 
 const Spotlight = () => {
     return (
-        <section className='section'>
+        <section className='section --fit-content'>
             <div className='section__inner'>
                 <h1>Spotlight</h1>
                 <h2>Smart attendance for focus blocks.</h2>
