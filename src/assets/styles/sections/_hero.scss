@@ -18,9 +18,6 @@
     }
 
     .focus {
-        font-size: 1.75em;
-        line-height: 8rem;
-
         &__header {
             font-size: 1.5em;
             margin-bottom: 0;
@@ -28,8 +25,16 @@
 
         &__subheader {
             color: $secondary;
-            line-height: 4rem;
-            min-height: 4em;
+        }
+
+        @include desktop {
+            font-size: 1.75em;
+            line-height: 8rem;
+
+            &__subheader {
+                line-height: 4rem;
+                min-height: 4em;
+            }
         }
     }
 }

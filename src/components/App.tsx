@@ -5,10 +5,11 @@ import '../assets/styles/main.scss'
 import Hero from './Sections/Hero'
 import WhatWeDo from './Sections/WhatWeDo'
 import OurStory from './Sections/OurStory'
-import Testimonial from './Testimonial'
+import Spotlight from './Sections/Spotlight'
 
 // Components
 import TopNav from './TopNav'
+import Testimonial from './Testimonial'
 
 interface IState {
     showTopNav: boolean
@@ -47,6 +48,7 @@ class App extends React.Component<{}, IState> {
                     image='/src/assets/images/testimonials/jeff.jpg'
                     quote={`It's been called "the gift of time" at Oak Bay - to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.`}
                 />
+                <Spotlight />
             </>
         )
     }
