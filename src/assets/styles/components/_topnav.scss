@@ -25,14 +25,6 @@
         transform: translateY(0);
     }
 
-    &__logo {
-        height: 3rem;
-
-        img {
-            height: 100%;
-        }
-    }
-
     &__menu_list {
         display: flex;
         flex-flow: row nowrap;
@@ -40,6 +32,10 @@
 
         & > * + * {
             margin-left: 2rem;
+        }
+
+        li, ul + ul {
+            display: none;
         }
     }
 
@@ -54,6 +50,10 @@
         .link {
             color: $secondary;
         }
+
+        .menu_button {
+            fill: $on-primary;
+        }
     }
 
     .button {
@@ -62,5 +62,24 @@
 
     .link {
         color: $primary;
+    }
+
+    @include desktop {
+        li, ul + ul {
+            display: initial;
+        }
+
+        .menu_button {
+            display: none;
+        }
+    }
+}
+
+.topnav__logo,
+.menu__header .menu__logo {
+    height: 3rem;
+
+    img {
+        height: 100%;
     }
 }

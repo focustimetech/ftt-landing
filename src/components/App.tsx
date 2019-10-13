@@ -10,13 +10,16 @@ import Spotlight from './Sections/Spotlight'
 // Components
 import TopNav from './TopNav'
 import Testimonial from './Testimonial'
+import MenuWidget from './MenuWidget'
 
 interface IState {
+    menuOpen: boolean
     showTopNav: boolean
 }
 
 class App extends React.Component<{}, IState> {
     state: IState = {
+        menuOpen: false,
         showTopNav: false
     }
 
@@ -25,6 +28,14 @@ class App extends React.Component<{}, IState> {
             this.setState({ showTopNav: true });
         else
             this.setState({ showTopNav: false })
+    }
+    
+    handleMenuOpen = () => {
+        this.setState({ menuOpen: true })
+    }
+
+    handleMenuClose = () => {
+        this.setState({ menuOpen: false })
     }
 
     componentDidMount() {
@@ -38,8 +49,9 @@ class App extends React.Component<{}, IState> {
     render() {
         return (
             <>
-                <TopNav visible={this.state.showTopNav} />
-                <Hero />
+                <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
+                <TopNav visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
+                <Hero onMenuOpen={this.handleMenuOpen} />
                 <WhatWeDo />
                 <OurStory />
                 <Testimonial

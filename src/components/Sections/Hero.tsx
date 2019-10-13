@@ -13,11 +13,15 @@ const messages: string[] = [
 
 const Loop = TextLoop as any
 
-class Hero extends React.Component {
-    render() {
+interface IProps {
+    onMenuOpen: () => void
+}
+
+const Hero = (props: IProps) => {
+
         return (
             <section id='hero' className={classNames('section', 'hero_section')}>
-                <TopNav onHero visible />
+                <TopNav onHero visible onMenuOpen={props.onMenuOpen} />
                 <div className='section__inner'>
                     <div className='flexbox'>
                         <div>
@@ -36,7 +40,7 @@ class Hero extends React.Component {
                 </div>
             </section>
         )
-    }
+
 }
 
 export default Hero
