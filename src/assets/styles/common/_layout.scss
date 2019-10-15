@@ -29,11 +29,15 @@ body {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
-    padding: 1rem 0;
 
     &.--fit-content {
         min-height: unset;
     }
+}
+
+.section,
+.testimonial {
+    padding: 1rem 0;
 
     @include tablet {
         padding: 2rem 0;
