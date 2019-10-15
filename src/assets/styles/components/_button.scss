@@ -1,10 +1,11 @@
 .button {
     font-size: 1.25rem;
     padding: 0.625em 1em;
-    color: $on-secondary;
+    color: $on-primary;
+    background: $primary-gradient;
     border-radius: 2px;
     font-weight: 600;
-    color: inherit;
+    // color: inherit;
 
     &.--on-primary {
         background: $secondary-gradient;
