@@ -5,7 +5,8 @@
     background: $primary-gradient;
     border-radius: 2px;
     font-weight: 600;
-    // color: inherit;
+    display: inline-block;
+    text-decoration: none;
 
     &.--on-primary {
         background: $secondary-gradient;
