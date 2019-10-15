@@ -36,7 +36,8 @@ body {
 }
 
 .section,
-.testimonial {
+.testimonial,
+.footer {
     padding: 1rem 0;
 
     @include tablet {
@@ -51,7 +52,8 @@ body {
 .section__inner,
 .topnav,
 .testimonial__inner,
-.menu__inner {
+.menu__inner,
+.footer__inner {
     margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
