@@ -26,7 +26,7 @@ const Spotlight = () => {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur metus a elit dignissim, congue egestas ex convallis.</p>
                         </div>
                         <div>
-                            <img alt='image1' />
+                            <img className='screenshot' src='/src/assets/images/demo/screenshot1.jpg' />
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const Spotlight = () => {
                 <div className='section__inner'>
                     <div className='flexbox'>
                         <div>
-                            <img alt='image1' />
+                            <img className='screenshot' src='/src/assets/images/demo/screenshot2.jpg' />
                         </div>
                         <div>
                             <h2>Pellentesque eu elit et dui pulvinar ullamcorper.</h2>
@@ -60,7 +60,7 @@ const Spotlight = () => {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur metus a elit dignissim, congue egestas ex convallis.</p>
                         </div>
                         <div>
-                            <img alt='image1' />
+                            <img className='screenshot' src='/src/assets/images/demo/screenshot3.jpg' />
                         </div>
                     </div>
                 </div>
