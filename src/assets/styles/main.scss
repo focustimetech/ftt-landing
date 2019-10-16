@@ -1,8 +1,9 @@
-/* Reset, Layout, Variables, Mixins */
+/* Reset, Layout, Variables, Mixins, Routes */
 @import "./common/variables";
 @import "./common/mixins";
 @import "./common/reset";
 @import "./common/layout";
+@import "./common/router";
 
 /* Components */
 @import "./components/button";

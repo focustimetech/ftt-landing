@@ -20,7 +20,7 @@ interface IProps {
 class LandingPage extends React.Component<IProps> {
     render() {
         return (
-            <div className='site-wrap'>
+            <div className='site_page'>
                 <Hero onMenuOpen={this.props.onMenuOpen} />
                 <WhatWeDo />
                 <Testimonial

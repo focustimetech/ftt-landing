@@ -5,6 +5,9 @@ import {
 	RouteComponentProps,
 	Switch
 } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
+/* Styles */
 import '../assets/styles/main.scss'
 
 /* Components */
@@ -52,16 +55,24 @@ class App extends React.Component<{}, IState> {
     render() {
         return (
             <Router>
-                <Route path='/' render={(props: RouteComponentProps) => (
+                <Route render={(props: RouteComponentProps) => (
                     <>
                         <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
                         <TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
+                        <TransitionGroup>
+                            <CSSTransition
+                                timeout={3000}
+                                classNames='fade'
+                                key={props.location.key}
+                            >
+                                <Switch location={props.location}>
+                                    <Route path='/contact' component={ContactPage} />
+                                    <Route path='/' component={LandingPage} />
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
                     </>
                 )} />
-                <Switch>
-                    <Route path='/contact' component={ContactPage} />
-                    <Route path='/' component={LandingPage} />
-                </Switch>
             </Router>
         )
     }
