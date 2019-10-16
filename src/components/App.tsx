@@ -12,11 +12,13 @@ import '../assets/styles/main.scss'
 
 /* Components */
 import MenuWidget from './MenuWidget'
+import ScrollToTop from './ScrollToTop'
 import TopNav from './TopNav'
 
 /* Pages */
 import ContactPage from './Pages/ContactPage'
 import LandingPage from './Pages/LandingPage'
+import OurStoryPage from './Pages/OurStoryPage'
 
 interface IState {
     menuOpen: boolean
@@ -59,18 +61,21 @@ class App extends React.Component<{}, IState> {
                     <>
                         <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
                         <TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
-                        <TransitionGroup>
-                            <CSSTransition
-                                timeout={3000}
-                                classNames='fade'
-                                key={props.location.key}
-                            >
-                                <Switch location={props.location}>
-                                    <Route path='/contact' component={ContactPage} />
-                                    <Route path='/' component={LandingPage} />
-                                </Switch>
-                            </CSSTransition>
-                        </TransitionGroup>
+                        <ScrollToTop {...props}>
+                            <TransitionGroup>
+                                <CSSTransition
+                                    timeout={3000}
+                                    classNames='fade'
+                                    key={props.location.key}
+                                >
+                                    <Switch location={props.location}>
+                                        <Route path='/contact' component={ContactPage} />
+                                        <Route path='/our-story' component={OurStoryPage} />
+                                        <Route path='/' component={LandingPage} />
+                                    </Switch>
+                                </CSSTransition>
+                            </TransitionGroup>
+                        </ScrollToTop>
                     </>
                 )} />
             </Router>
