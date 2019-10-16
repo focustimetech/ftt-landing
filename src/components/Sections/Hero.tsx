@@ -6,9 +6,9 @@ import { Button } from '../Button'
 import TopNav from '../TopNav'
 
 const messages: string[] = [
-    '...on empowering students.',
-    '...on innovating.',
-    "...on your school's needs."
+    'On empowering students...',
+    'On innovating...',
+    "On your school's needs..."
 ]
 
 const Loop = TextLoop as any
