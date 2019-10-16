@@ -120,3 +120,12 @@ h1 {
 .screenshot {
     box-shadow: $elevation1;
 }
+
+.icon_header {
+    display: flex;
+    align-items: center;
+
+    & > span {
+        margin-right: 0.375em;
+    }
+}
