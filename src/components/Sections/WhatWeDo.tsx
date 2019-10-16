@@ -12,7 +12,7 @@ const WhatWeDo = () => {
                         <a className='link'>Read More</a>
                     </div>
                     <div>
-                        <img src='/src/assets/images/hero/undraw_teacher_35j2.svg' />
+                        <img src='src/assets/images/hero/undraw_teacher_35j2.svg' />
                     </div>
                 </div>
             </div>

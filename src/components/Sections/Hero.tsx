@@ -34,7 +34,7 @@ const Hero = (props: IProps) => {
                             <h6>We create platforms where educators and students can share information and get smarter together.</h6>
                             <Button onPrimary>Book a Demo</Button>
                         </div>
-                        <div><img className='hero_image' src='/src/assets/images/hero/undraw_new_ideas_jdea (1).svg'/></div>
+                        <div><img className='hero_image' src='src/assets/images/hero/undraw_new_ideas_jdea (1).svg'/></div>
                     </div>
                     
                 </div>
