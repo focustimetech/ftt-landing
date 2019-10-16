@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {
 	BrowserRouter as Router,
-	Redirect,
 	Route,
 	RouteComponentProps,
 	Switch
@@ -53,8 +52,12 @@ class App extends React.Component<{}, IState> {
     render() {
         return (
             <Router>
-                <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
-                <TopNav visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
+                <Route path='/' render={(props: RouteComponentProps) => (
+                    <>
+                        <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
+                        <TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
+                    </>
+                )} />
                 <Switch>
                     <Route path='/contact' component={ContactPage} />
                     <Route path='/' component={LandingPage} />

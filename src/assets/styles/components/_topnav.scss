@@ -37,6 +37,11 @@
         li, ul + ul {
             display: none;
         }
+
+        & > a {
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     &.--hero {

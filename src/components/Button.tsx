@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import * as classNames from 'classnames'
 
 interface IProps {
@@ -7,8 +8,15 @@ interface IProps {
     onPrimary?: boolean
     to?: string
 }
+
 export const Button = (props: IProps) => {
-    return (
-        <a className={classNames('button', {'--on-primary': props.onPrimary})} href={props.to}>{props.children}</a>
+    const ButtonContent = (
+        <a className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</a>
+    )
+
+    return props.to ? (
+        <Link to={props.to}>{ButtonContent}</Link>
+    ) : (
+        ButtonContent
     )
 }

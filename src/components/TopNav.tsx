@@ -1,21 +1,25 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { RouteComponentProps, Link } from 'react-router-dom'
 import * as classNames from 'classnames'
 
 import { Button } from './Button'
 import MenuWidget from './MenuWidget'
 
-interface IProps {
+type IProps = Partial<RouteComponentProps> & {
     onHero?: boolean
     visible: boolean
     onMenuOpen: () => void
 }
 
 const TopNav = (props: IProps) => {
+    const atRoot: boolean = props.location && props.location.pathname === '/'
+
     return (
-        <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero}, {'--visible': props.visible})}>
+        <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero}, {'--visible': props.visible || !atRoot})}>
             <ul className='topnav__menu_list'>
-                <div className='topnav__logo'><img src={`src/assets/images/${props.onHero ? 'ft-white.png' : 'ft-blue.png'}`} /></div>
+                <Link to='/'>
+                    <div className='topnav__logo'><img src={`src/assets/images/${props.onHero ? 'ft-white.png' : 'ft-blue.png'}`} /></div>
+                </Link>
                 <Link to='what-we-do'><li>What We Do</li></Link>
                 <Link to='our-story'><li>Our Story</li></Link>
                 <Link to='spotlight'><li>Spotlight</li></Link>
