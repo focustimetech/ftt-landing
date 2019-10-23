@@ -9,7 +9,7 @@ interface IProps {
     to?: string
 }
 
-export const Button = (props: IProps) => {
+const Button = (props: IProps) => {
     const ButtonContent = (
         <a className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</a>
     )
@@ -20,3 +20,5 @@ export const Button = (props: IProps) => {
         ButtonContent
     )
 }
+
+export default Button

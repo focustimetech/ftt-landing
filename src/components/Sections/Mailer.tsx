@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Button } from '../Button'
+import Button from '../Button'
 
 const Mailer = () => {
     const [inputValue, setInputValue] = React.useState('')

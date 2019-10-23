@@ -1,5 +1,8 @@
 import * as React from 'react'
 
+import Contact from '../Sections/Contact'
+import Footer from '../Sections/Footer'
+
 const OurStoryPage = () => {
     return (
         <div className='site_page'>
@@ -36,6 +39,8 @@ const OurStoryPage = () => {
                     </div>
                 </div>
             </section>
+            <Contact />
+            <Footer />
         </div>
     )
 }

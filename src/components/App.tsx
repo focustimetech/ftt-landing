@@ -18,6 +18,7 @@ import TopNav from './TopNav'
 import ContactPage from './Pages/ContactPage'
 import LandingPage from './Pages/LandingPage'
 import OurStoryPage from './Pages/OurStoryPage'
+import SpotlightPage from './Pages/SpotlightPage'
 
 interface IState {
     menuOpen: boolean
@@ -71,6 +72,7 @@ class App extends React.Component<{}, IState> {
                                     <Switch location={props.location}>
                                         <Route path='/contact' component={ContactPage} />
                                         <Route path='/our-story' component={OurStoryPage} />
+                                        <Route path='/spotlight' component={SpotlightPage} />
                                         <Route path='/' component={LandingPage} />
                                     </Switch>
                                 </CSSTransition>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import classNames from 'classnames'
 import TextLoop from 'react-text-loop'
 
-import { Button } from '../Button'
+import Button from '../Button'
 import TopNav from '../TopNav'
 
 const messages: string[] = [

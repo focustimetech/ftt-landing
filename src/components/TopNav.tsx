@@ -2,7 +2,7 @@ import * as React from 'react'
 import { RouteComponentProps, Link } from 'react-router-dom'
 import * as classNames from 'classnames'
 
-import { Button } from './Button'
+import Button from './Button'
 import MenuWidget from './MenuWidget'
 
 type IProps = Partial<RouteComponentProps> & {
