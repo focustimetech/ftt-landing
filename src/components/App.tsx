@@ -12,7 +12,6 @@ import '../assets/styles/main.scss'
 
 /* Components */
 import MenuWidget from './MenuWidget'
-import ScrollToTop from './ScrollToTop'
 import TopNav from './TopNav'
 
 /* Pages */
@@ -61,12 +60,13 @@ class App extends React.Component<{}, IState> {
                     <>
                         <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
                         <TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
-                        <ScrollToTop {...props}>
+
                             <TransitionGroup>
                                 <CSSTransition
-                                    timeout={3000}
+                                    timeout={450}
                                     classNames='fade'
                                     key={props.location.key}
+                                    onExit={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
                                 >
                                     <Switch location={props.location}>
                                         <Route path='/contact' component={ContactPage} />
@@ -75,7 +75,7 @@ class App extends React.Component<{}, IState> {
                                     </Switch>
                                 </CSSTransition>
                             </TransitionGroup>
-                        </ScrollToTop>
+
                     </>
                 )} />
             </Router>
