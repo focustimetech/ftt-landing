@@ -6,17 +6,28 @@ const OurStoryPage = () => {
             <section className='section --fit-content'>
                 <div className='section__inner'>
                     <h1>Our Story</h1>
-                    <p>We are a team of Victoria high school grads who are showcasing the value of our education. We’ve experienced first hand the challenges that educators have collecting data and making sense of it. Our technology fills the gap.  Not only do we create the platforms, but we also guide the analysis of the data for the benefit of both school and student.</p>
                     <div className='flexbox'>
-                        <div className='flex-shrink'>
+                        <div>
+                            <p>We are a team of Victoria high school grads who are showcasing the value of our education. We’ve experienced first hand the challenges that educators have collecting data and making sense of it. Our technology fills the gap.  Not only do we create the platforms, but we also guide the analysis of the data for the benefit of both school and student.</p>
+                        </div>
+                        <div>
+                            <img src='src/assets/images/focustime2.jpg' />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className='section --fit-content'>
+                <div className='section__inner'>
+                    <div className='profile'>
+                        <div className='photo'>
                             <img src='src/assets/images/vlad.jpg' />
                         </div>
                         <div>
                             <p>Vlad is the CEO at Focustime. Having worked with students and teachers in the past through tutoring programs, Vlad understand the daily challenges in classrooms. His vision is to allow students, teachers, and administrators to work together with meaningful software to fill the gaps in the learning process. He co-founded Focustime with the goal of improving self-directed study blocks and giving all schools to tools to succeed.</p>
                         </div>
                     </div>
-                    <div className='flexbox'>
-                        <div className='flex-shrink'>
+                    <div className='profile'>
+                        <div className='photo'>
                             <img src='src/assets/images/curtis.jpg' />
                         </div>
                         <div>

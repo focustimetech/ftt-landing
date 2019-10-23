@@ -33,6 +33,10 @@ body {
     &.--fit-content {
         min-height: unset;
     }
+
+    &:first-child {
+        padding-top: 8rem;
+    }
 }
 
 .section,
