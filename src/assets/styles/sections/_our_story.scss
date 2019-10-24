@@ -5,12 +5,33 @@
 .profile {
     display: flex;
     flex-flow: row nowrap;
+    
+    & + .profile {
+        margin-top: 1rem;
+    }
 
     & > div:first-child {
         flex-grow: 0;
+        margin-right: 2rem;
 
         img {
             width: 15em;
         }
+    }
+
+    h2 {
+        margin-bottom: 0.25rem;
+        display: flex;
+        align-items: center;
+
+        .linked-in {
+            display: flex;
+            fill: $primary;
+            margin-left: 1rem;
+        }
+    }
+    
+    h3 {
+        font-weight: 500;
     }
 }

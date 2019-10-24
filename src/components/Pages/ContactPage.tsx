@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import Footer from '../Sections/Footer'
+
 const ContactPage = () => {
     return (
         <div className='site_page'>
@@ -8,6 +10,7 @@ const ContactPage = () => {
                     <h1>Contact</h1>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

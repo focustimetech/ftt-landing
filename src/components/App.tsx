@@ -73,6 +73,11 @@ class App extends React.Component<{}, IState> {
                                         <Route path='/contact' component={ContactPage} />
                                         <Route path='/our-story' component={OurStoryPage} />
                                         <Route path='/spotlight' component={SpotlightPage} />
+                                        {
+                                            /**
+                                             * @TODO Create 404 route
+                                             */
+                                        }
                                         <Route path='/' component={LandingPage} />
                                     </Switch>
                                 </CSSTransition>
