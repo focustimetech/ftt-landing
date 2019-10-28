@@ -5,6 +5,7 @@ import Footer from '../Sections/Footer'
 
 import Icon from '../Icon'
 import Button from '../Button'
+import Testimonial from '../Testimonial'
 
 const SpotlightPage = () => {
     return (
@@ -68,6 +69,12 @@ const SpotlightPage = () => {
                     </div>
                 </div>
             </section>
+            <Testimonial
+                name='Jeff Laird'
+                source='Teacher, School District 61'
+                image='src/assets/images/testimonials/jeff.jpg'
+                quote={`It's been called "the gift of time" at Oak Bay - to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.`}
+            />
             <Contact />
             <Footer />
         </div>

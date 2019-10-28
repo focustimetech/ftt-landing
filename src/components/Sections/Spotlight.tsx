@@ -32,7 +32,6 @@ const Spotlight = () => {
                     </div>
                 </div>
             </section>
-            <Mailer />
         </>
     )
 }
