@@ -20,13 +20,14 @@ const TopNav = (props: IProps) => {
                 <Link to='/'>
                     <div className='topnav__logo'><img src={`src/assets/images/${props.onHero ? 'ft-white.png' : 'ft-blue.png'}`} /></div>
                 </Link>
-                <Link to='what-we-do'><li>What We Do</li></Link>
                 <Link to='our-story'><li>Our Story</li></Link>
                 <Link to='spotlight'><li>Spotlight</li></Link>
                 <Link to='contact'><li>Contact</li></Link>
             </ul>
             <ul className='topnav__menu_list'>
+                {/*
                 <li><a className='link' href='your-school'>Sign In</a></li>
+                */}
                 <li><Button onPrimary={props.onHero}>Book a Demo</Button></li>
             </ul>
             <a onClick={() => props.onMenuOpen()} className='menu_button'>

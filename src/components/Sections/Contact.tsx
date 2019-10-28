@@ -13,8 +13,8 @@ const Contact = () => {
                     <div>
                         <div className='section__inner'>
                             <h1>Contact</h1>
-                            <h2>Got a question? Ask us!</h2>
-                            <p>Want a demo? Let’s book a time.</p>
+                            <h2>Want a demo? Let’s book a time.</h2>
+                            <p>Got a question? Ask us!</p>
                             <Button to='contact'>Contact Us</Button>
                         </div>
                     </div>
