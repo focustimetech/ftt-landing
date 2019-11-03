@@ -60,8 +60,7 @@ class App extends React.Component<{}, IState> {
                 <Route render={(props: RouteComponentProps) => (
                     <>
                         <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
-                        <TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} />
-
+                        {/*<TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} /> */}
                             <TransitionGroup>
                                 <CSSTransition
                                     timeout={450}

@@ -1,12 +1,14 @@
 .button {
-    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0125rem;
+    font-size: 1rem;
+    border-radius: 4px;
     padding: 0.625em 1em;
     color: $on-primary;
     background: $primary-gradient;
-    border-radius: 2px;
-    font-weight: 600;
     display: inline-block;
     text-decoration: none;
+    box-shadow: $elevation1;
 
     &.--on-primary {
         background: $secondary-gradient;
