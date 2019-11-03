@@ -59,29 +59,27 @@ class App extends React.Component<{}, IState> {
             <Router>
                 <Route render={(props: RouteComponentProps) => (
                     <>
-                        <MenuWidget open={this.state.menuOpen} onClose={this.handleMenuClose} />
-                        {/*<TopNav {...props} visible={this.state.showTopNav} onMenuOpen={this.handleMenuOpen} /> */}
-                            <TransitionGroup>
-                                <CSSTransition
-                                    timeout={450}
-                                    classNames='fade'
-                                    key={props.location.key}
-                                    onExit={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
-                                >
-                                    <Switch location={props.location}>
-                                        <Route path='/contact' component={ContactPage} />
-                                        <Route path='/our-story' component={OurStoryPage} />
-                                        <Route path='/spotlight' component={SpotlightPage} />
-                                        {
-                                            /**
-                                             * @TODO Create 404 route
-                                             */
-                                        }
-                                        <Route path='/' component={LandingPage} />
-                                    </Switch>
-                                </CSSTransition>
-                            </TransitionGroup>
-
+                        <TransitionGroup>
+                            <CSSTransition
+                                timeout={450}
+                                classNames='fade'
+                                key={props.location.key}
+                                onExit={() => window.scrollTo({ top: 0, behavior: 'smooth'})}
+                                unmountOnExit={false}
+                            >
+                                <Switch location={props.location}>
+                                    <Route path='/contact' component={ContactPage}/>
+                                    <Route path='/our-story' component={OurStoryPage} />
+                                    <Route path='/spotlight' component={SpotlightPage} />
+                                    {
+                                        /**
+                                         * @TODO Create 404 route
+                                         */
+                                    }
+                                    <Route path='/' component={LandingPage} />
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
                     </>
                 )} />
             </Router>
