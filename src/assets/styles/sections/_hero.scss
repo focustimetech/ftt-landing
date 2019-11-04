@@ -1,19 +1,20 @@
 .hero_section {
     background: $primary-gradient;
     color: $on-primary;
+    padding: 0 !important;
 
-    .section__inner {
+    .hero__container {
         font-size: 3em;
-    }
-
-    .hero_container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
-
-        .hero_image {
-            width: 100%;
-        }
+        display: flex;
+        flex-flow: column nowrap;
+        // max-width: 1280px;
+        // padding: 0 6rem;
+        // margin: 0 auto;
+        min-height: 100vh;
+        padding-top: 6rem;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .focus {
@@ -33,6 +34,30 @@
             &__subheader {
                 line-height: 4rem;
                 min-height: 4em;
+            }
+        }
+    }
+
+    .summary {
+        display: flex;
+        flex-flow: row nowrap;
+
+        & > * {
+            flex: 1;
+        }
+
+        &__info {
+            padding-bottom: 3rem;
+        }
+
+        &__image {
+            display: flex;
+            align-items: flex-end;
+
+            img {
+                width: 100%;
+                position: relative;
+                bottom: -1rem;
             }
         }
     }
