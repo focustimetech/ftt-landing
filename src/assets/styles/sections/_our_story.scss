@@ -4,15 +4,14 @@
 
 .profile {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     
     & + .profile {
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
-    & > div:first-child {
-        flex-grow: 0;
-        margin-right: 2rem;
+    .photo {
+        margin: 0 auto 1rem;
 
         img {
             width: 15em;
@@ -33,5 +32,18 @@
     
     h3 {
         font-weight: 500;
+    }
+
+    @include tablet {
+        flex-flow: row nowrap;
+
+        .photo {
+            flex-grow: 0;
+            margin-right: 2rem;
+        }
+
+        & + .profile {
+            margin-top: 1rem;
+        }
     }
 }
