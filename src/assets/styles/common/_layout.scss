@@ -19,7 +19,11 @@
 body {
     font-family: 'CeraPro';
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
+
+    @include desktop {
+        font-size: 18px;
+    }
 }
 
 .section {
@@ -44,7 +48,7 @@ body {
 .footer {
     padding: 2rem 0;
 
-    @include desktop {
+    @include tablet {
         padding: 3rem 0;
     }
 }
@@ -75,8 +79,12 @@ body {
 
 h1 {
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom: 0.5em;
+
+    @include desktop {
+        font-size: 3em;
+    }
 }
 
 .flexbox {
@@ -110,7 +118,7 @@ h1 {
         }
     }
 
-    @include desktop {
+    @include tablet {
         flex-direction: row;
 
         & > * {

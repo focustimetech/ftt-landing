@@ -32,7 +32,7 @@
         font-weight: 400;
     }
 
-    @include desktop {
+    @include tablet {
         &__menu {
             display: flex;
             text-align: left;

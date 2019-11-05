@@ -20,7 +20,7 @@
             }
         }
 
-        @include desktop {
+        @include tablet {
             flex-flow: row nowrap;
 
             .hero_summary {

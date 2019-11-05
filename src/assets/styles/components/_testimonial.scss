@@ -5,7 +5,7 @@
         display: flex;
         flex-flow: column;
 
-        @include desktop {
+        @include tablet {
             flex-flow: row;
         }
     }
@@ -24,7 +24,7 @@
             width: 100%;
         }
 
-        @include desktop {
+        @include tablet {
             margin: 1em 2em 0 0;
             order: unset;
         }
@@ -32,8 +32,11 @@
 
     &__quote {
         font-style: italic;
-        font-size: 1.125em;
-        margin-bottom: 1.5em;
+        
+        @include desktop {
+            font-size: 1.125em;
+            margin-bottom: 1.5em;
+        }
     }
 
     &__content {
@@ -55,7 +58,7 @@
         margin-bottom: 1em;
     }
 
-    @include desktop {
+    @include tablet {
         text-align: left;
     }
 }
