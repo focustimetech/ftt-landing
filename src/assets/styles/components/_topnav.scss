@@ -61,10 +61,6 @@
         }
     }
 
-    .button {
-        font-size: inherit;
-    }
-
     .link {
         color: $primary;
     }
@@ -76,6 +72,16 @@
 
         .menu_button {
             display: none;
+        }
+
+        .button {
+            font-size: 0.75em;
+        }
+    }
+
+    @include desktop {
+        .button {
+            font-size: inherit;
         }
     }
 }

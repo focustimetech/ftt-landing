@@ -11,7 +11,7 @@
     height: 100vh;
     width: 100vw;
     background: #FFF;
-    color: $on-primary;
+    color: black;
     left: 0;
     top: 0;
     transform: translateX(100%);
@@ -24,11 +24,25 @@
         transform: translateX(0);
     }
 
+    &__inner {
+        text-align: center;
+    }
+
     &__header {
         display: flex;
         align-items: center;
         flex-flow: row;
         justify-content: space-between;
+    }
+
+    &__list {
+        padding: 2rem;
+        font-size: 1.5em;    
+
+        li {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
     }
 
     .menu_button {
