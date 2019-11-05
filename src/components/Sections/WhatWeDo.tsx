@@ -11,7 +11,7 @@ const WhatWeDo = () => {
                         <h2>More than just software.</h2>
                         <p>We create platforms where educators and students can share information and get smarter together. We started Focustime for schools to harness data from focus blocks to better develop the student-teacher relationship and to allow students to study more efficiently.</p>
                     </div>
-                    <div>
+                    <div className='--image'>
                         <img src='src/assets/images/hero/undraw_teacher_35j2.svg' />
                     </div>
                 </div>

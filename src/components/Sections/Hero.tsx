@@ -8,7 +8,11 @@ import TopNav from '../TopNav'
 const messages: string[] = [
     'empowering students.',
     'innovating.',
-    "your school's needs."
+    "your school's needs.",
+    'learning.',
+    'teaching.',
+    'what matters.',
+    'administrating.'
 ]
 
 const Loop = TextLoop as any
@@ -27,7 +31,7 @@ const Hero = (props: IProps) => {
                         <div className='focus'>
                             <h6>Focus on</h6>
                             <h6 className='loop'>
-                                <Loop noWrap={true} children={messages} />
+                                <Loop interval={1500} noWrap={true} children={messages} />
                             </h6>
                         </div>
                         <h6 className='tagline'>We create platforms where educators and students can share information and get smarter together.</h6>

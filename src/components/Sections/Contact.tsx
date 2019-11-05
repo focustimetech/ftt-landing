@@ -7,7 +7,7 @@ const Contact = () => {
         <section className='section about_section --fit-content'>
             <div className='section__inner'>
                 <div className='flexbox'>
-                    <div>
+                    <div className='--image'>
                         <img src='src/assets/images/hero/undraw_contact_us_15o2.svg' />
                     </div>
                     <div>

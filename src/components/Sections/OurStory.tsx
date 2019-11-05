@@ -7,7 +7,7 @@ const OurStory = () => {
             <div className='section__inner'>
                 <h1>Our Story</h1>
                 <div className='flexbox'>
-                    <div>
+                    <div className='--image'>
                         <img src='src/assets/images/focustime.jpg' />
                     </div>
                     <div>

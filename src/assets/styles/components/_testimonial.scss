@@ -1,19 +1,32 @@
 .testimonial {
+    text-align: center;
+
     &__inner {
         display: flex;
+        flex-flow: column;
+
+        @include desktop {
+            flex-flow: row;
+        }
     }
 
     &__image {
         padding: 0.5em;
         width: 12.5em;
         height: 12.5em;
-        margin: 1em 2em 0 0;
         border: 0.5em solid #00caff;
         border-radius: 50%;
+        margin: 0 auto;
+        order: 2;
 
         img {
             border-radius: 50%;
             width: 100%;
+        }
+
+        @include desktop {
+            margin: 1em 2em 0 0;
+            order: unset;
         }
     }
 
@@ -40,5 +53,9 @@
         height: 3em;
         width: 4em;
         margin-bottom: 1em;
+    }
+
+    @include desktop {
+        text-align: left;
     }
 }

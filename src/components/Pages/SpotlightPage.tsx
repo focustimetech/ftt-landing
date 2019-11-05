@@ -32,7 +32,7 @@ const SpotlightPage = () => {
                                 <h2 className='icon_header'><Icon>data_usage</Icon>Better Data</h2>
                                 <p>Spotlight allows for administrators to zoom in on the classroom, getting data on how students and teachers are using their time during self-directed blocks.</p>
                             </div>
-                            <div>
+                            <div className='--image'>
                                 <img className='screenshot' src='src/assets/images/demo/screenshot1.jpg' />
                             </div>
                         </div>
@@ -41,7 +41,7 @@ const SpotlightPage = () => {
                 <section className='section --fit-content'>
                     <div className='section__inner'>
                         <div className='flexbox'>
-                            <div>
+                            <div className='--image'>
                                 <img className='screenshot' src='src/assets/images/demo/screenshot2.jpg' />
                             </div>
                             <div>
@@ -66,7 +66,7 @@ const SpotlightPage = () => {
                                 <h2 className='icon_header'><Icon>thumb_up</Icon>Ease of Use</h2>
                                 <p>With Spotlight, students are able to check in using their mobile device and dive right into the work at hand.</p>
                             </div>
-                            <div>
+                            <div className='--image'>
                                 <img className='screenshot' src='src/assets/images/demo/screenshot3.jpg' />
                             </div>
                         </div>

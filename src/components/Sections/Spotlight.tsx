@@ -26,7 +26,7 @@ const Spotlight = () => {
                             <h2 className='icon_header'><Icon>data_usage</Icon>Better Data</h2>
                             <p>Spotlight allows for administrators to zoom in on the classroom, getting data on how students and teachers are using their time during self-directed blocks.</p>
                         </div>
-                        <div>
+                        <div className='--image'>
                             <img className='screenshot' src='src/assets/images/demo/screenshot1.jpg' />
                         </div>
                     </div>

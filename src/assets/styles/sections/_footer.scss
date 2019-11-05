@@ -2,15 +2,6 @@
     background: $primary-gradient;
     color: $on-primary;
 
-    ul {
-        display: flex;
-        align-items: center;
-
-        & > * + * {
-            margin-left: 1rem;
-        }
-    }
-
     &__logo {
         height: 3rem;
         display: flex;
@@ -22,7 +13,42 @@
         }
     }
 
+    &__inner {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__menu {
+        text-align: right;
+
+        * {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
     .copyright {
         font-weight: 400;
+    }
+
+    @include desktop {
+        &__menu {
+            display: flex;
+            text-align: left;
+        }
+
+        &__inner {
+            justify-content: start;
+        }
+
+        &__inner,
+        &__menu {
+            align-items: center;
+
+            & > * + * {
+                margin-left: 1rem;
+            }
+        }
     }
 }
