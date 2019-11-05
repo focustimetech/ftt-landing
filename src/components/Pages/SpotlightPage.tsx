@@ -28,9 +28,9 @@ const SpotlightPage = () => {
                                 <h2 className='icon_header'><Icon>cloud</Icon>Declutter</h2>
                                 <p>Transitioning from a paper-based ledger can be difficult. Spotlight enables the process of switching to a cloud-based system easy.</p>
                                 <h2 className='icon_header'><Icon>security</Icon>Security</h2>
-                                <p>All the student data is stored in Focustime's Canada based encrypted servers, ensuring student data is safe under lock and key.</p>
+                                <p>Data security and integrity is our biggest priority. We work to comply with all school and district level regulations.</p>
                                 <h2 className='icon_header'><Icon>data_usage</Icon>Better Data</h2>
-                                <p>Spotlight allows for administrators to zoom in on the classroom, getting data on how students and teachers are using their time during self-directed blocks.</p>
+                                <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                             </div>
                             <div className='--image'>
                                 <img className='screenshot' src='src/assets/images/demo/screenshot1.jpg' />
@@ -46,11 +46,11 @@ const SpotlightPage = () => {
                             </div>
                             <div>
                                 <h2 className='icon_header'><Icon>double_arrow</Icon>Stay on Track</h2>
-                                <p>Spotlight allows teachers to schedule around self-directed blocks and streamline their weeks and months ahead, no planner necessary.</p>
+                                <p>Spotlight allows teachers to schedule around self-directed blocks and streamline their weeks and months ahead — no planner necessary.</p>
                                 <h2 className='icon_header'><Icon>local_cafe</Icon>Peace of Mind</h2>
-                                <p>Both organizing and administering students during self-directed blocks can be a hassle for teachers. With Spotlight, students are instructed and notified for where they need to be to ensure a seamless transition to a new block.</p>
+                                <p>Both organizing and administrating students during self-directed blocks can be difficult for teachers. With Spotlight, students are notified on where they need to be in order to ensure seamless transitions between classes.</p>
                                 <h2 className='icon_header'><Icon>how_to_reg</Icon>Student Data</h2>
-                                <p>Spotlight enables teachers to reflect on their students habits during self-directed blocks, allowing for direction on what to study next, or what to focus on for the coming weeks.</p>
+                                <p>Spotlight enables teachers to reflect on student habits during self-directed blocks, allowing teachers to offer direction to students that need it most.</p>
                             </div>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ const SpotlightPage = () => {
                         <div className='flexbox'>
                             <div>
                                 <h2 className='icon_header'><Icon>cached</Icon>Habit Building</h2>
-                                <p>Self directed blocks replicate the experience of post-secondary school. With Spotlight, we help students keep on task and prepare them for future learning.</p>
+                                <p>Self-directed blocks give students a glimpse into post-secondary learning. With Spotlight, we help students stay on track to prepare them for future education.</p>
                                 <h2 className='icon_header'><Icon>today</Icon>Accountability</h2>
-                                <p>Spotlight offers a look back into the past, see what was missed weeks prior with ease with clear and concise logs of your self-directed blocks.</p>
+                                <p>Spotlight offers a clear and concise look at missed and attended blocks.</p>
                                 <h2 className='icon_header'><Icon>thumb_up</Icon>Ease of Use</h2>
-                                <p>With Spotlight, students are able to check in using their mobile device and dive right into the work at hand.</p>
+                                <p>Spotlight is accessable and easy to access for students using a mobile phone or computer — at school or from home.</p>
                             </div>
                             <div className='--image'>
                                 <img className='screenshot' src='src/assets/images/demo/screenshot3.jpg' />

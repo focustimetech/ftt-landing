@@ -22,9 +22,9 @@ const Spotlight = () => {
                             <h2 className='icon_header'><Icon>cloud</Icon>Declutter</h2>
                             <p>Transitioning from a paper-based ledger can be difficult. Spotlight enables the process of switching to a cloud-based system easy.</p>
                             <h2 className='icon_header'><Icon>security</Icon>Security</h2>
-                            <p>All the student data is stored in Focustime's Canada based encrypted servers, ensuring student data is safe under lock and key.</p>
+                            <p>Data security and integrity is our biggest priority. We work to comply with all school and district level regulations.</p>
                             <h2 className='icon_header'><Icon>data_usage</Icon>Better Data</h2>
-                            <p>Spotlight allows for administrators to zoom in on the classroom, getting data on how students and teachers are using their time during self-directed blocks.</p>
+                            <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                         </div>
                         <div className='--image'>
                             <img className='screenshot' src='src/assets/images/demo/screenshot1.jpg' />
