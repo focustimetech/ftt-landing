@@ -20,40 +20,7 @@ import LandingPage from './Pages/LandingPage'
 import OurStoryPage from './Pages/OurStoryPage'
 import SpotlightPage from './Pages/SpotlightPage'
 
-interface IState {
-    menuOpen: boolean
-    showTopNav: boolean
-}
-
-class App extends React.Component<{}, IState> {
-    state: IState = {
-        menuOpen: false,
-        showTopNav: false
-    }
-
-    onScroll = (event: any) => {
-        if (window.pageYOffset > 500 /* && window.pageYOffset < 900*/ )
-            this.setState({ showTopNav: true });
-        else
-            this.setState({ showTopNav: false })
-    }
-    
-    handleMenuOpen = () => {
-        this.setState({ menuOpen: true })
-    }
-
-    handleMenuClose = () => {
-        this.setState({ menuOpen: false })
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.onScroll)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll, false)
-    }
-
+class App extends React.Component {
     render() {
         return (
             <Router>

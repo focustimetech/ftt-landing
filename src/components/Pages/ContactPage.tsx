@@ -7,7 +7,7 @@ const ContactPage = () => {
     return (
         <div className='site_page'>
             <div>
-                <TopNav visible={true} onMenuOpen={() => null} />
+                <TopNav visible />
                 <section className='section'>
                     <div className='section__inner'>
                         <h1>Contact</h1>

@@ -38,7 +38,7 @@ body {
         min-height: unset;
     }
 
-    &:first-child {
+    &.--topnav {
         padding-top: 8rem;
     }
 }

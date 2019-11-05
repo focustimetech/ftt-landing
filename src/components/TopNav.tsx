@@ -7,18 +7,18 @@ import MenuWidget from './MenuWidget'
 
 type IProps = Partial<RouteComponentProps> & {
     onHero?: boolean
+    fixed?: boolean
     visible: boolean
-    onMenuOpen: () => void
 }
 
 const TopNav = (props: IProps) => {
     const [menuOpen, setMenuOpen] = React.useState(false)
 
-    const atRoot: boolean = props.location && props.location.pathname === '/'
+    // const atRoot: boolean = props.location && props.location.pathname === '/'
     return (
         <>
             <MenuWidget open={menuOpen} onClose={() => setMenuOpen(false)} />
-            <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero}, {'--visible': props.visible || !atRoot})}>
+            <nav id='topnav' className={classNames('topnav', {'--hero': props.onHero}, {'--visible': props.visible }, {'--fixed': props.fixed})}>
                 <ul className='topnav__menu_list'>
                     <Link to='/'>
                         <div className='topnav__logo'><img src={`src/assets/images/${props.onHero ? 'ft-white.png' : 'ft-blue.png'}`} /></div>

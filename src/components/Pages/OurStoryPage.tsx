@@ -8,7 +8,7 @@ const OurStoryPage = () => {
     return (
         <div className='site_page'>
             <div>
-                <TopNav visible={true} onMenuOpen={() => null} />
+                <TopNav visible />
                 <section className='section --fit-content'>
                     <div className='section__inner'>
                         <h1>Our Story</h1>

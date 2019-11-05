@@ -17,15 +17,10 @@ const messages: string[] = [
 
 const Loop = TextLoop as any
 
-interface IProps {
-    onMenuOpen: () => void
-}
-
-const Hero = (props: IProps) => {
-
+const Hero = () => {
         return (
-            <section id='hero' className='section hero_section --fit-content'>
-                <TopNav onHero visible onMenuOpen={props.onMenuOpen} />
+            <section id='hero' className='section hero_section --fit-content --topnav'>
+                <TopNav onHero visible/>
                 <div className='section__inner hero__container'>
                     <div className='hero_summary'>
                         <div className='focus'>
@@ -43,7 +38,6 @@ const Hero = (props: IProps) => {
                 </div>                               
             </section>
         )
-
 }
 
 export default Hero

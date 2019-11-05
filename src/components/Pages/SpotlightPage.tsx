@@ -12,7 +12,7 @@ const SpotlightPage = () => {
     return (
         <div className='site-page'>
             <div>
-                <TopNav visible={true} onMenuOpen={() => null} />
+                <TopNav visible />
                 <section className='section --fit-content'>
                     <div className='section__inner'>
                         <h1>Spotlight</h1>

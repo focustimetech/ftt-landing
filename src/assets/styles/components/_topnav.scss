@@ -25,6 +25,10 @@
         transform: translateY(0);
     }
 
+    &.--fixed {
+        position: fixed;
+    }
+
     &__menu_list {
         display: flex;
         flex-flow: row nowrap;
