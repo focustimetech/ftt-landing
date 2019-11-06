@@ -9,7 +9,8 @@ const WhatWeDo = () => {
                 <div className='flexbox'>
                     <div>
                         <h2>More than just software.</h2>
-                        <p>We create platforms where educators and students can share information and get smarter together. We started Focustime for schools to harness data from focus blocks to better develop the student-teacher relationship and to allow students to study more efficiently.</p>
+                        <p>We started Focustime for schools to harness data from self-directed study blocks to better develop the student-teacher relationship and to allow students to study more efficiently.</p>
+                        <p>Since then, we've continued to build our attendance platform, Spotlight, with one goal in mind: to help students and teachers get smarter together.</p>
                     </div>
                     <div className='--image'>
                         <img src='src/assets/images/hero/undraw_teacher_35j2.svg' />
