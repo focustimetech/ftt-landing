@@ -1,8 +1,8 @@
 .textfield {
     position: relative;
     display: table;
-    padding: 1px 0 0 0;
-    //padding-top: 1.5em;
+    border-radius: 4px 4px 0 0;
+    padding: 1em 0.5em 0;
     border-bottom: 2px solid #000;
     transition-property: border;
     background: none;
@@ -21,10 +21,9 @@
         transition: all 0.2s;
     }
 
-    input {
-        padding: 1em 0.5em 0;
+    input,
+    textarea {
         font-size: 1em;
-        line-height: 2.5em;
         font-family: inherit;
         height: 3em;
         font-weight: 500;
@@ -32,23 +31,19 @@
         outline: none;
         margin-right: 0.25em;
         box-sizing: border-box;
-        border-radius: 4px 4px 0 0;
         background: none;
         margin: 0;
         transition: all 0.2s;
-
-        &:hover {
-            background: rgba(3, 72, 114, 0.12);
-        }
-
-        &:focus {
-            background: rgba(3, 72, 114, 0.16);
-        }
     }
 
     &:focus-within {
         border-bottom: 3px solid $primary;
         padding-top: 0;
+        background: rgba(3, 72, 114, 0.16);
+    }
+
+    &:hover {
+        background: rgba(3, 72, 114, 0.12);
     }
 
     &:focus-within,

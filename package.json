@@ -4,10 +4,11 @@
   "description": "Get smarter together.",
   "main": "webpack.config.js",
   "dependencies": {
-    "@material-ui/core": "^4.6.0",
+    "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-google-recaptcha": "^2.0.1",
     "react-router-dom": "^5.1.2",
     "react-text-loop": "^2.2.0",
     "react-transition-group": "^4.3.0"

@@ -9,6 +9,12 @@
     display: inline-block;
     text-decoration: none;
     box-shadow: $elevation1;
+    border: none;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 
     &.--on-primary {
         background: $secondary-gradient;

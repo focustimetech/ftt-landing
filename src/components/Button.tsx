@@ -4,14 +4,18 @@ import * as classNames from 'classnames'
 
 interface IProps {
     children: any
+    type?: 'button' | 'submit' | 'reset'
     color?: string
     onPrimary?: boolean
     to?: string
+    onClick?: () => void
 }
 
 const Button = (props: IProps) => {
-    const ButtonContent = (
-        <a className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</a>
+    const ButtonContent = props.type ? (
+        <button type={props.type} className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</button>
+    ) : (
+        <a onClick={props.onClick} className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</a>
     )
 
     return props.to ? (
