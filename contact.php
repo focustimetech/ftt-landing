@@ -9,15 +9,19 @@
     header("Access-Control-Allow-Origin: *");
 
     $json = file_get_contents("php://input");
-    $_POST = json_decode($json, true);
+    $body = json_decode($json, true);
+    echo "raw post data =\n";
+    echo $HTTP_RAW_POST_DATA;
+    die;
 
-    if (empty($_POST['name']) && empty($_POST['email']))
+    if (empty($body['name']) && empty($body['email']))
+        echo json_encode([ 'message' => 'Message is missing sender information.' ]);
         die;
 
-    if ($_POST) {
+    if ($body) {
         http_response_code(200);
-        $subject = strlen($_POST['message']) > 78 ? substr($_POST['message'], 0, 75). '...' : $_POST['message'];
-        $from = $_POST['email'];
+        $subject = strlen($body['message']) > 75 ? substr($body['message'], 0, 72). '...' : $body['message'];
+        $from = $body['email'];
 
         // Headers
         $headers = "MIME-Version: 1.0\r\n";

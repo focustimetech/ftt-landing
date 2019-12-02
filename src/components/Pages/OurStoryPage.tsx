@@ -15,6 +15,8 @@ const OurStoryPage = () => {
                         <div className='flexbox'>
                             <div>
                                 <p>We are a team of Victoria high school grads who are showcasing the value of our education. We’ve experienced first hand the challenges that educators have collecting data and making sense of it. Our technology fills the gap.  Not only do we create the platforms, but we also guide the analysis of the data for the benefit of both school and student.</p>
+                                <p>Our story started in 2016 when our high school adopted flex blocks into its schedule. Although the idea to use an app to manage this new schedule was suggested by teachers, no such app existed. Instead, teachers used agenda books and stamps to hold students accountable, which didn’t exactly work.</p>
+                                <p>With the need for a new attendance solution we created the first version of Spotlight, which went on to be used by our school the following year. Since then, we have been continuously improving the platform and adding new tools for teachers, students and administrators.</p>
                             </div>
                             <div className='--image'>
                                 <img src='src/assets/images/focustime3.jpg' />

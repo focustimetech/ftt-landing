@@ -7,15 +7,15 @@ import Mailer from './Mailer'
 const Spotlight = () => {
     return (
         <>
-            <section className='section --fit-content'>
+            <section className='section spotlight_section --fit-content'>
                 <div className='section__inner'>
                     <h1>Spotlight</h1>
                     <h2>Smart attendance for focus blocks.</h2>
                     <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                    <Link to='spotlight' className='link'>Read More</Link>
+                    <Link to='spotlight --on-primary' className='link'>Read More</Link>
                 </div>
             </section>
-            <section className='section --fit-content'>
+            <section className='section spotlight_section --fit-content'>
                 <div className='section__inner'>
                     <div className='flexbox'>
                         <div>
