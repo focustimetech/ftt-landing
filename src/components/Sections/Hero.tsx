@@ -30,7 +30,7 @@ const Hero = () => {
                             </h6>
                         </div>
                         <h6 className='tagline'>We create platforms where educators and students can share information and get smarter together.</h6>
-                        <Button onPrimary>Book a Demo</Button>
+                        <Button onPrimary to='contact'>Book a Demo</Button>
                     </div>   
                     <div className='hero_image'>
                         <img src='src/assets/images/hero/undraw_new_ideas_jdea (1).svg'/>
