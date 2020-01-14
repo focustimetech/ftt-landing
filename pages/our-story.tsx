@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import TopNav from '../TopNav'
-import Contact from '../Sections/Contact'
-import Footer from '../Sections/Footer'
+import TopNav from '../components/TopNav'
+import Contact from '../components/Sections/Contact'
+import Footer from '../components/Sections/Footer'
 
 const OurStoryPage = () => {
     return (
@@ -19,7 +19,7 @@ const OurStoryPage = () => {
                                 <p>With the need for a new attendance solution we created the first version of Spotlight, which went on to be used by our school the following year. Since then, we have been continuously improving the platform and adding new tools for teachers, students and administrators.</p>
                             </div>
                             <div className='--image'>
-                                <img src='src/assets/images/focustime3.jpg' />
+                                <img src='images/focustime3.jpg' />
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@ const OurStoryPage = () => {
                     <div className='section__inner'>
                         <div className='profile'>
                             <div className='photo'>
-                                <img src='src/assets/images/vlad.jpg' />
+                                <img src='images/vlad.jpg' />
                             </div>
                             <div>
                                 <h2>
@@ -43,7 +43,7 @@ const OurStoryPage = () => {
                         </div>
                         <div className='profile'>
                             <div className='photo'>
-                                <img src='src/assets/images/curtis.jpg' />
+                                <img src='images/curtis.jpg' />
                             </div>
                             <div>
                                 <h2>

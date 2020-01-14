@@ -1,11 +1,11 @@
 import axios from 'axios'
 import * as React from 'react'
 
-import TopNav from '../TopNav'
-import TextField from '../TextField'
-import Footer from '../Sections/Footer'
+import TopNav from '../components/TopNav'
+import TextField from '../components/TextField'
+import Footer from '../components/Sections/Footer'
 
-import Button from '../Button'
+import Button from '../components/Button'
 
 interface IFormData {
     name: string

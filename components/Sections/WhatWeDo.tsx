@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 
 const WhatWeDo = () => {
     return (
@@ -13,7 +12,7 @@ const WhatWeDo = () => {
                         <p>Since then, we've continued to build our attendance platform, Spotlight, with one goal in mind: to help students and teachers get smarter together.</p>
                     </div>
                     <div className='--image'>
-                        <img src='src/assets/images/hero/undraw_teacher_35j2.svg' />
+                        <img src='images/hero/undraw_teacher_35j2.svg' />
                     </div>
                 </div>
             </div>

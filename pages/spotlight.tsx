@@ -1,12 +1,12 @@
 import * as React from 'react'
 
-import Contact from '../Sections/Contact'
-import Footer from '../Sections/Footer'
+import Contact from '../components/Sections/Contact'
+import Footer from '../components/Sections/Footer'
 
-import TopNav from '../TopNav'
-import Icon from '../Icon'
-import Button from '../Button'
-import Testimonial from '../Testimonial'
+import TopNav from '../components/TopNav'
+import Icon from '../components/Icon'
+import Button from '../components/Button'
+import Testimonial from '../components/Testimonial'
 
 const SpotlightPage = () => {
     return (
@@ -18,7 +18,7 @@ const SpotlightPage = () => {
                         <h1>Spotlight</h1>
                         <h2>Smart attendance for focus blocks.</h2>
                         <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                        <Button to='contact'>Book a Demo</Button>
+                        <Button href='contact'>Book a Demo</Button>
                     </div>
                 </section>
                 <section className='section --fit-content'>
@@ -33,7 +33,7 @@ const SpotlightPage = () => {
                                 <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                             </div>
                             <div className='--image'>
-                                <img className='screenshot' src='src/assets/images/demo/screenshot1.jpg' />
+                                <img className='screenshot' src='images/demo/screenshot1.jpg' />
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ const SpotlightPage = () => {
                     <div className='section__inner'>
                         <div className='flexbox'>
                             <div className='--image'>
-                                <img className='screenshot' src='src/assets/images/demo/screenshot2.jpg' />
+                                <img className='screenshot' src='images/demo/screenshot2.jpg' />
                             </div>
                             <div>
                                 <h2 className='icon_header'><Icon>double_arrow</Icon>Stay on Track</h2>
@@ -67,7 +67,7 @@ const SpotlightPage = () => {
                                 <p>Spotlight is accessable and easy to access for students using a mobile phone or computer — at school or from home.</p>
                             </div>
                             <div className='--image'>
-                                <img className='screenshot' src='src/assets/images/demo/screenshot3.jpg' />
+                                <img className='screenshot' src='images/demo/screenshot3.jpg' />
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const SpotlightPage = () => {
                 <Testimonial
                     name='Jeff Laird'
                     source='Teacher, School District 61'
-                    image='src/assets/images/testimonials/jeff.jpg'
+                    image='images/testimonials/jeff.jpg'
                     quote={`It's been called "the gift of time" at Oak Bay - to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.`}
                 />
                 <Contact />

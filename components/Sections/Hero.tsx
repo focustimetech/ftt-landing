@@ -33,7 +33,7 @@ const Hero = () => {
                         <Button onPrimary to='contact'>Book a Demo</Button>
                     </div>   
                     <div className='hero_image'>
-                        <img src='src/assets/images/hero/undraw_new_ideas_jdea (1).svg'/>
+                        <img src='images/hero/undraw_new_ideas_jdea (1).svg'/>
                     </div>
                 </div>                               
             </section>
