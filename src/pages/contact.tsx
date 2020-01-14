@@ -15,34 +15,65 @@ interface IFormData {
 }
 
 interface IState {
-    error: boolean
+    error: string
     formData: IFormData
     success: boolean
     uploading: boolean
 }
+
 class ContactPage extends React.Component {
     state: IState = {
-        error: false,
+        error: null,
         formData: { name: '', email: '', schoolName: '', message: '' },
         success: false,
         uploading: false
     }
+
+    emailInvalid = (): boolean => {
+        return 
+    }
     
+    emptyFormField = (): boolean => {
+        return  
+    }
+
     handleSubmit = (event: any) => {
         event.preventDefault()
+        if (Object.values(this.state.formData).includes('')) {
+            this.setState({ error: 'Please complete the form before sending.' })
+            return
+        } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.formData.email)) {
+            this.setState({ error: 'Please use a valid email address.' })
+            return
+        }
+
         const data = {
             subject: this.state.formData.schoolName,
             senderEmail: this.state.formData.email,
             sender: this.state.formData.name,
             body: this.state.formData.message
         }
-        axios.post('http://localhost:3000/api/sendEmail', data)
+        this.setState({ uploading: true })
+        axios.post('http://localhost:3000/api/sendEmail', data).then(() => {
+            this.setState((state: IState) => ({
+                success: true,
+                uploading: false,
+                formData: { ...state.formData, message: '' }
+            }))
+        }, () => {
+            this.setState({ error: "That didn't work. Please try again", uploading: false })
+        })
     }
 
     handleChange = (event: any) => {
+        if (this.state.uploading) {
+            return
+        }
         const name: string = event.target.name
         const value: string = event.target.value
         this.setState((state: IState) => ({
+            error: null,
+            success: false,
             formData: {
                 ...state.formData,
                 [name]: value
@@ -84,6 +115,12 @@ class ContactPage extends React.Component {
                                     onChange={this.handleChange}
                                 />
                                 <br />
+                                {this.state.error && (
+                                    <p className='error'>{this.state.error}</p>
+                                )}
+                                {this.state.success && (
+                                    <p className='success'>Thanks for reaching out! We'll be sure to keep in touch.</p>
+                                )}
                                 <Button type='submit'>Send</Button>
                             </form>
                         </div>
