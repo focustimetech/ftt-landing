@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import * as React from 'react'
+import React from 'react'
 
 import Icon from '../Icon'
 import Mailer from './Mailer'

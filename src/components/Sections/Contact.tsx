@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import Button from '../Button'
 
@@ -15,7 +15,7 @@ const Contact = () => {
                             <h1>Contact</h1>
                             <h2>Want a demo? Let’s book a time.</h2>
                             <p>Got a question? Ask us!</p>
-                            <Button to='contact'>Contact Us</Button>
+                            <Button href='contact'>Contact Us</Button>
                         </div>
                     </div>
                 </div>

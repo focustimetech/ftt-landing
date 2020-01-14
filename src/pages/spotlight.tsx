@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import Contact from '../components/Sections/Contact'
 import Footer from '../components/Sections/Footer'

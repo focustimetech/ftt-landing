@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import makeTitle from '../util/makeTitle'
 
-import '../style/main.scss'
+import '../../style/main.scss'
 
 class MyApp extends App {
     render() {

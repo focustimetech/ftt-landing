@@ -1,6 +1,6 @@
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import Link from 'next/link'
-import * as React from 'react'
+import React from 'react'
 
 import Button from './Button'
 import MenuWidget from './MenuWidget'
