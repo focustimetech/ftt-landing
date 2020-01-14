@@ -1,7 +1,10 @@
 const withSass = require('@zeit/next-sass');
 // const defaultGetLocalIdent = require('@zeit/css-loader/lib/getLocalIdent');
-const withCSS = require("@zeit/next-css");
-module.exports = withSass(withCSS({
+// const withCSS = require("@zeit/next-css");
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
+const path = require('path')
+
+module.exports = withSass({
     cssModules: true,
     cssLoaderOptions: {
         importLoaders: 1,
@@ -9,16 +12,8 @@ module.exports = withSass(withCSS({
     },
     // sassLoaderOptions: {},
     
-    webpack (config, options) {
-        config.module.rules.push({
-            test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ]
-        });
+    webpack (config, { buildId, dev, dir, isServer, config: { distDir } }) {
 
         return config;
     }
-}));
+});
