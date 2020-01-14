@@ -6,7 +6,6 @@ import TextField from '../components/TextField'
 import Footer from '../components/Sections/Footer'
 
 import Button from '../components/Button'
-import { sendEmail } from '../util/email'
 
 interface IFormData {
     name: string
@@ -31,8 +30,13 @@ class ContactPage extends React.Component {
     
     handleSubmit = (event: any) => {
         event.preventDefault()
-        const { schoolName, email, name, message } = this.state.formData
-        sendEmail(schoolName, message, name, email)
+        const data = {
+            subject: this.state.formData.schoolName,
+            senderEmail: this.state.formData.email,
+            sender: this.state.formData.name,
+            body: this.state.formData.message
+        }
+        axios.post('http://localhost:3000/api/sendEmail', data)
     }
 
     handleChange = (event: any) => {

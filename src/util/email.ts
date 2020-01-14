@@ -5,12 +5,13 @@ const RECIPIENTS: string[] = [
     'vlad@focustime.ca'
 ]
 
+aws.config.loadFromPath('aws/config.json')
 const ses = new aws.SES()
 
 /**
  * Sends an email to each of the recipients given by `RECIPIENTS`.
  */
-export const sendEmail = (subject: string, body: string, sender: string, senderEmail: string) => {
+export const sendEmailHelper = (subject: string, body: string, sender: string, senderEmail: string) => {
     const params: aws.SES.SendTemplatedEmailRequest = {
         Source: 'contact@focustime.ca',
         Destination: {
