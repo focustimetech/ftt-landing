@@ -1,8 +1,8 @@
 import classNames from 'classnames'
-import Link from 'next/link'
 import React from 'react'
 
 import Button from './Button'
+import Link from './Link'
 import MenuWidget from './MenuWidget'
 
 interface IProps {

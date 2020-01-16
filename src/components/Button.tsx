@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
-import Link from 'next/link'
+
+import Link from './Link'
 
 interface IProps {
     children: any

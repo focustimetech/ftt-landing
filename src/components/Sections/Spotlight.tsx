@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import React from 'react'
 
 import Icon from '../Icon'
+import Link from '../Link'
 import Mailer from './Mailer'
 
 const Spotlight = () => {
