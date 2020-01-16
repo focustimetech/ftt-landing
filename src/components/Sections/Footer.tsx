@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='footer__inner'>
                 <div className='footer__logo'>
                     <img src='images/ft-white.png' />
-                    <span className='copyright'>© 2019</span>
+                    <span className='copyright'>© 2020</span>
                 </div>
                 <ul className='footer__menu'>
                     <Link href='our-story'><li>Our Story</li></Link>
