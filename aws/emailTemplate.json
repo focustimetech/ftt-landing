@@ -1,0 +1,8 @@
+{
+    "Template": {
+        "TemplateName": "ContactTemplate",
+        "SubjectPart": "[Contact] {{subject}}",
+        "HtmlPart": "<p>Sender: {{sender}}</p><p>Email: {{senderEmail}}</p><p>Message: {{body}}</p>",
+        "TextPart": "Sender: {{sender}}\r\nEmail: {{senderEmail}}\r\nMessage: {{body}}"
+    }
+}

@@ -1,13 +1,14 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
+import React from 'react'
+
+import Link from './Link'
 
 interface IProps {
     children: any
     type?: 'button' | 'submit' | 'reset'
     color?: string
     onPrimary?: boolean
-    to?: string
+    href?: string
     onClick?: () => void
 }
 
@@ -18,11 +19,7 @@ const Button = (props: IProps) => {
         <a onClick={props.onClick} className={classNames('button', {'--on-primary': props.onPrimary})}>{props.children}</a>
     )
 
-    return props.to ? (
-        <Link to={props.to}>{ButtonContent}</Link>
-    ) : (
-        ButtonContent
-    )
+    return props.href ? <Link href={props.href}>{ButtonContent}</Link> : ButtonContent
 }
 
 export default Button

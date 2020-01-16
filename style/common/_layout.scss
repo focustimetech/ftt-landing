@@ -1,23 +1,23 @@
 @font-face {
     font-family: 'CeraPro';
     font-weight: 400;
-    src: url('../src/assets/fonts/cera-pro/cerapro-regular-webfont.woff');
+    src: url('/fonts/cera-pro/cerapro-regular-webfont.woff2');
 }
 
 @font-face {
     font-family: 'CeraPro';
     font-weight: 500;
-    src: url('../src/assets/fonts/cera-pro/cerapro-medium-webfont.woff');
+    src: url('/fonts/cera-pro/cerapro-medium-webfont.woff2');
 }
 
 @font-face {
     font-family: 'CeraPro';
     font-weight: 600;
-    src: url('../src/assets/fonts/cera-pro/cerapro-bold-webfont.woff');
+    src: url('/fonts/cera-pro/cerapro-bold-webfont.woff2');
 }
 
 body {
-    font-family: 'CeraPro';
+    font-family: 'CeraPro', 'Helvetica', 'Segoe UI', 'Roboto', 'sans-serif';
     font-weight: 500;
     font-size: 16px;
 
@@ -154,4 +154,9 @@ h1 {
     & > span {
         margin-right: 0.375em;
     }
+}
+
+.next-link {
+    cursor: pointer;
+    text-decoration: none;
 }
