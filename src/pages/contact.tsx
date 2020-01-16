@@ -58,7 +58,7 @@ class ContactPage extends React.Component {
             body: this.state.formData.message
         }
         this.setState({ uploading: true })
-        axios.post('http://localhost:3000/api/sendEmail', data).then(() => {
+        axios.post('http://localhost:8081/api/sendEmail', data).then(() => {
             this.setState((state: IState) => ({
                 success: true,
                 uploading: false,
