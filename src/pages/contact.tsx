@@ -2,11 +2,12 @@ import axios from 'axios'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import { Button, TextField } from '@material-ui/core'
+
 import TopNav from '../components/TopNav'
-import TextField from '../components/TextField'
 import Footer from '../components/Sections/Footer'
 
-import Button from '../components/Button'
+// import Button from '../components/Button'
 import makeTitle from '../util/makeTitle'
 
 const DOCUMENT_TITLE: string = 'Contact'
@@ -97,39 +98,56 @@ class ContactPage extends React.Component {
                         <section className='section --fit-content'>
                             <div className='section__inner'>
                                 <h1>Contact</h1>
+                                <p>Drop us a line! We'll be sure to get back to you as soon as possible.</p>
                                 <form onSubmit={this.handleSubmit} className='contact-form'>
-                                    <h3>Your Name</h3>
-                                    <input
+                                    <TextField
                                         name='name'
+                                        label='Your Name'
                                         value={this.state.formData.name}
                                         onChange={this.handleChange}
+                                        variant='outlined'
+                                        margin='normal'
+                                        required
+                                        fullWidth
                                     />
-                                    <h3>Your Email</h3>
-                                    <input
+                                    <TextField
                                         name='email'
+                                        label='Your Email'
                                         value={this.state.formData.email}
                                         onChange={this.handleChange}
+                                        variant='outlined'
+                                        margin='normal'
+                                        required
+                                        fullWidth
                                     />
-                                    <h3>Your School</h3>
-                                    <input
+                                    <TextField
                                         name='schoolName'
+                                        label='Your School'
                                         value={this.state.formData.schoolName}
                                         onChange={this.handleChange}
+                                        variant='outlined'
+                                        margin='normal'
+                                        required
+                                        fullWidth
                                     />
-                                    <h3>Your Message</h3>
-                                    <textarea
+                                    <TextField
                                         name='message'
+                                        label='Your Message'
                                         value={this.state.formData.message}
                                         onChange={this.handleChange}
+                                        variant='outlined'
+                                        margin='normal'
+                                        required
+                                        multiline
+                                        fullWidth
                                     />
-                                    <br />
                                     {this.state.error && (
                                         <p className='error'>{this.state.error}</p>
                                     )}
                                     {this.state.success && (
                                         <p className='success'>Thanks for reaching out! We'll be sure to keep in touch.</p>
                                     )}
-                                    <Button type='submit'>Send</Button>
+                                    <Button variant='contained' color='primary' type='submit'>Send</Button>
                                 </form>
                             </div>
                         </section>
