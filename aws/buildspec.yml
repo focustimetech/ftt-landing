@@ -11,3 +11,10 @@ phases:
   build:
     commands:
       - npm run build
+  artifacts:
+    files:
+      - .next/*
+      - node_modules
+      - aws/config.json
+      - public
+      - next*
