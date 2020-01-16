@@ -13,8 +13,9 @@ phases:
       - npm run build
 artifacts:
   files:
-    - .next/*
-    - node_modules
+    - .next/**/*
+    - node_modules/**/*
     - aws/config.json
-    - public
+    - public/**/*
     - next*
+    - package.json
