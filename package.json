@@ -13,12 +13,14 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-google-recaptcha": "^2.0.1",
+    "react-helmet": "^5.2.1",
     "react-text-loop": "^2.2.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
+    "@types/react-helmet": "^5.0.15",
     "css-loader": "^3.2.0",
     "extract-css-chunks-webpack-plugin": "^4.7.1",
     "node-sass": "^4.13.0",
