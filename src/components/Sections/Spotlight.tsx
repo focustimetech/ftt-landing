@@ -12,7 +12,7 @@ const Spotlight = () => {
                     <h1>Spotlight</h1>
                     <h2>Smart attendance for focus blocks.</h2>
                     <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                    <Link href='spotlight --on-primary'><a className='link'>Read More</a></Link>
+                    <Link href='spotlight'><a className='link --on-primary'>Read More</a></Link>
                 </div>
             </section>
             <section className='section spotlight_section --fit-content'>
