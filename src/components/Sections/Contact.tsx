@@ -8,7 +8,7 @@ const Contact = () => {
             <div className='section__inner'>
                 <div className='flexbox'>
                     <div className='--image'>
-                        <img src='images/hero/undraw_contact_us_15o2.svg' />
+                        <img src='images/svg/contact.svg' />
                     </div>
                     <div>
                         <div className='section__inner'>
