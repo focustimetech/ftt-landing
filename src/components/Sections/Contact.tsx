@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../Button'
+import { Button } from '@material-ui/core'
 
 const Contact = () => {
     return (
@@ -15,7 +15,7 @@ const Contact = () => {
                             <h1>Contact</h1>
                             <h2>Want a demo? Let’s book a time.</h2>
                             <p>Got a question? Ask us!</p>
-                            <Button href='contact'>Contact Us</Button>
+                            <Button variant='contained' color='primary' href='contact'>Contact Us</Button>
                         </div>
                     </div>
                 </div>
