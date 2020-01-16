@@ -10,10 +10,10 @@ The landing page for [focustime.ca](https://focustime.ca)
 npm install
 ```
 
-2. Start the dev-server.
+2. Start the Next dev server.
 
 ```bash
-npm run server
+npm run dev
 ```
 
-3. Visit <localhost:8080> in your browser.
+3. Visit <localhost:8081> in your browser.
