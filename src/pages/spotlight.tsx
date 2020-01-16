@@ -1,12 +1,13 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import { Button } from '@material-ui/core'
+
 import Contact from '../components/Sections/Contact'
 import Footer from '../components/Sections/Footer'
 
 import TopNav from '../components/TopNav'
 import Icon from '../components/Icon'
-import Button from '../components/Button'
 import Testimonial from '../components/Testimonial'
 
 import makeTitle from '../util/makeTitle'
@@ -27,7 +28,7 @@ const SpotlightPage = () => {
                             <h1>Spotlight</h1>
                             <h2>Smart attendance for focus blocks.</h2>
                             <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                            <Button href='contact'>Book a Demo</Button>
+                            <Button variant='contained' color='primary' href='contact'>Book a Demo</Button>
                         </div>
                     </section>
                     <section className='section --fit-content'>

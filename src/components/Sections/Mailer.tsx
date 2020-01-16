@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../Button'
+import { Button } from '@material-ui/core'
 
 const Mailer = () => {
     const [inputValue, setInputValue] = React.useState('')
@@ -16,7 +16,7 @@ const Mailer = () => {
                         value={inputValue}
                         onChange={(event: any) => setInputValue(event.target.value)}
                     />
-                    <Button onPrimary>Keep Me Posted</Button>
+                    <Button variant='contained' color='primary'>Keep Me Posted</Button>
                 </div>
             </div>
         </section>

@@ -2,7 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 import TextLoop from 'react-text-loop'
 
-import Button from '../Button'
+import { Button } from '@material-ui/core'
+
 import TopNav from '../TopNav'
 
 const messages: string[] = [
@@ -30,7 +31,7 @@ const Hero = () => {
                             </h6>
                         </div>
                         <h6 className='tagline'>We create platforms where educators and students can share information and get smarter together.</h6>
-                        <Button onPrimary href='contact'>Book a Demo</Button>
+                        <Button variant='contained' color='secondary' href='contact'>Book a Demo</Button>
                     </div>   
                     <div className='hero_image'>
                         <img src='images/svg/hero.svg'/>
