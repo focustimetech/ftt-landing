@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import { Button, TextField } from '@material-ui/core'
 
@@ -35,6 +36,8 @@ class ContactPage extends React.Component {
         success: false,
         uploading: false
     }
+
+    reCaptchaRef: React.RefObject<any> = React.createRef()
 
     emailInvalid = (): boolean => {
         return 
@@ -87,6 +90,10 @@ class ContactPage extends React.Component {
                 [name]: value
             }
         }))
+    }
+
+    handleReCaptchaChange = (token: string) => {
+        console.log('ReCAPTCHA value:', token)
     }
 
     render() {
@@ -145,6 +152,11 @@ class ContactPage extends React.Component {
                                         required
                                         multiline
                                         fullWidth
+                                    />
+                                    <ReCAPTCHA
+                                        ref={this.reCaptchaRef}
+                                        sitekey='6LfMuiYTAAAAAK_X3hkGwy6KNlxahC9_5PySJeqm'
+                                        onChange={this.handleReCaptchaChange}
                                     />
                                     {this.state.error && (
                                         <p className='error'>{this.state.error}</p>
