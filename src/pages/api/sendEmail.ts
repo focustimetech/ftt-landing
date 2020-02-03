@@ -57,8 +57,6 @@ const sendEmailRequest = (request: NextApiRequest, response: NextApiResponse) =>
         remoteip: request.connection.remoteAddress  // User's IP Address
     }
 
-    console.log(reCaptchaData)
-
     // Verify ReCAPTCHA with Google.
     axios.post(`https://www.google.com/recaptcha/api/siteverify?${new URLSearchParams(reCaptchaData).toString()}`)
         .then((res: IReCaptchaResponse) => {

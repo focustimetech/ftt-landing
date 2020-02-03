@@ -3,9 +3,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-import { TextField } from '@material-ui/core'
+import { Snackbar, TextField } from '@material-ui/core'
 
-import { IEmailData } from './api/sendEmail'
 import makeTitle from '../util/makeTitle'
 
 import LoadingButton from '../components/LoadingButton'
@@ -16,6 +15,11 @@ const DOCUMENT_TITLE: string = 'Contact'
 
 const ReCAPTCHA_SITEKEY: string = '6LfMuiYTAAAAAK_X3hkGwy6KNlxahC9_5PySJeqm'
 
+interface ISnackbarMessage {
+    message: string
+    key: string
+}
+
 interface IFormData {
     name: string
     email: string
@@ -24,25 +28,25 @@ interface IFormData {
 }
 
 interface IState {
-    error: string
     invalidEmail: boolean
     formData: IFormData
     reCaptchaValue: string
-    success: boolean
     uploading: boolean
+    snackbarOpen: boolean
+    snackbarMessage?: ISnackbarMessage
 }
 
 class ContactPage extends React.Component {
     state: IState = {
-        error: null,
         invalidEmail: false,
         formData: { name: '', email: '', schoolName: '', message: '' },
-        success: false,
         uploading: false,
-        reCaptchaValue: null
+        reCaptchaValue: null,
+        snackbarOpen: false
     }
 
     reCaptchaRef: React.RefObject<any> = React.createRef()
+    queueRef: React.MutableRefObject<ISnackbarMessage[]> = React.createRef<ISnackbarMessage[]>()
 
     emailInvalid = (): boolean => {
         return 
@@ -55,7 +59,7 @@ class ContactPage extends React.Component {
     handleSubmit = (event: any) => {
         event.preventDefault()
         if (Object.values(this.state.formData).includes('')) {
-            this.setState({ error: 'Please complete the form before sending.' })
+            this.handleQueueSnackbar('Please complete the form before sending.')
             return
         } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.formData.email)) {
             this.setState({ invalidEmail: true })
@@ -71,13 +75,15 @@ class ContactPage extends React.Component {
         }
         this.setState({ uploading: true, invalidEmail: false, error: null })
         axios.post('/api/sendEmail', data).then(() => {
+            this.handleQueueSnackbar("Thanks for reaching out! We'll be sure to keep in touch.")
             this.setState((state: IState) => ({
-                success: true,
                 uploading: false,
                 formData: { ...state.formData, message: '' }
             }))
+            this.reCaptchaRef.current.reset() // Reset the ReCAPTCHA
         }, () => {
-            this.setState({ error: "That didn't work. Please try again", uploading: false })
+            this.handleQueueSnackbar("That didn't work. Please try again")
+            this.setState({ uploading: false })
         })
     }
 
@@ -100,6 +106,36 @@ class ContactPage extends React.Component {
 
     handleReCaptchaChange = (reCaptchaValue: string) => {
         this.setState({ reCaptchaValue })
+    }
+    
+    handleQueueSnackbar = (message: string) => {
+        this.queueRef.current.push({ message, key: String(new Date().getTime()) })
+
+        if (this.state.snackbarOpen) {
+            this.setState({ snackbarOpen: false })
+        } else {
+            this.processSnackbarQueue()
+        }
+    }
+
+    handleCloseSnackbar = (event: React.SyntheticEvent | MouseEvent, reason?: string) => {
+        if (reason === 'clickaway') {
+            return
+        }
+        this.setState({ snackbarOpen: false })
+    }
+
+    processSnackbarQueue = () => {
+        if (this.queueRef.current.length > 0) {
+            this.setState({
+                snackbarMessage: this.queueRef.current.shift(),
+                snackbarOpen: true
+            })
+        }
+    }
+
+    componentDidMount() {
+        this.queueRef.current = []
     }
 
     render() {
@@ -173,6 +209,14 @@ class ContactPage extends React.Component {
                                     >Send</LoadingButton>
                                 </form>
                             </div>
+                            <Snackbar
+                                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                                open={this.state.snackbarOpen}
+                                autoHideDuration={6000}
+                                message={this.state.snackbarMessage ? this.state.snackbarMessage.message : undefined}
+                                onClose={this.handleCloseSnackbar}
+                                onExited={this.processSnackbarQueue}
+                            />
                         </section>
                         <Footer />
                     </div>
