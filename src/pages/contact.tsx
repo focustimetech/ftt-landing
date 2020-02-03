@@ -14,6 +14,8 @@ import Footer from '../components/Sections/Footer'
 
 const DOCUMENT_TITLE: string = 'Contact'
 
+const ReCAPTCHA_SITEKEY: string = '6LfMuiYTAAAAAK_X3hkGwy6KNlxahC9_5PySJeqm'
+
 interface IFormData {
     name: string
     email: string
@@ -159,7 +161,7 @@ class ContactPage extends React.Component {
                                     />
                                     <ReCAPTCHA
                                         ref={this.reCaptchaRef}
-                                        sitekey='6LfMuiYTAAAAAK_X3hkGwy6KNlxahC9_5PySJeqm'
+                                        sitekey={ReCAPTCHA_SITEKEY}
                                         onChange={this.handleReCaptchaChange}
                                     />
                                     <LoadingButton
@@ -167,6 +169,7 @@ class ContactPage extends React.Component {
                                         variant='contained'
                                         color='primary'
                                         type='submit'
+                                        disabled={!this.state.reCaptchaValue}
                                     >Send</LoadingButton>
                                 </form>
                             </div>

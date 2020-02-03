@@ -35,7 +35,7 @@ interface IReCaptchaResponse extends AxiosResponse {
     data: IReCaptchaData
 }
 
-const sendEmailRequest = (request: NextApiRequest, response: NextApiResponse): Promise<any> => {
+const sendEmailRequest = (request: NextApiRequest, response: NextApiResponse) => {
     const { subject, body, sender, senderEmail, reCaptchaValue } = request.body
     const params: aws.SES.SendTemplatedEmailRequest = {
         Source: 'contact@focustime.ca',
@@ -50,37 +50,36 @@ const sendEmailRequest = (request: NextApiRequest, response: NextApiResponse): P
             senderEmail
         })
     }
+
     const reCaptchaData = {
         secret: RECAPTCHA_SECRET,                   // Our secret key
         response: reCaptchaValue,                   // The ReCAPTCHA value
         remoteip: request.connection.remoteAddress  // User's IP Address
     }
 
-    return new Promise((resolve, reject) => {
-        // Verify ReCAPTCHA with Google.
-        axios.post('https://www.google.com/recaptcha/api/siteverify', reCaptchaData)
-            .then((res: IReCaptchaResponse) => {
-                const { success } = res.data
+    console.log(reCaptchaData)
 
-                if (success) {
-                    // Send email through AWS.
-                    ses.sendTemplatedEmail(params, (error: aws.AWSError, data: aws.SES.SendTemplatedEmailResponse) => {
-                        if (error) {
-                            response.status(500).end('Failed to send email:' + error)
-                            reject()
-                        } else {
-                            response.status(200).end('Sent email successfully:' + data)
-                            resolve()
-                        }
-                    })
-                } else {
-                    reject()
-                }
-            })
-            .catch((err: any) => {
-                reject()
-            })
-    })
+    // Verify ReCAPTCHA with Google.
+    axios.post(`https://www.google.com/recaptcha/api/siteverify?${new URLSearchParams(reCaptchaData).toString()}`)
+        .then((res: IReCaptchaResponse) => {
+            const { success } = res.data
+
+            if (success) {
+                // Send email through AWS.
+                ses.sendTemplatedEmail(params, (error: aws.AWSError, data: aws.SES.SendTemplatedEmailResponse) => {
+                    if (error) {
+                        response.status(500).end('Failed to send email:' + error)
+                    } else {
+                        response.status(200).end('Sent email successfully:' + data)
+                    }
+                })
+            } else {
+                response.status(400).end('Failed ReCAPTCHA verifiation.')
+            }
+        })
+        .catch((err: any) => {
+            response.status(500).end('Could not verify via ReCAPTCHA.')
+        })
 }
 
 export default sendEmailRequest
