@@ -3,13 +3,14 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-import { Button, TextField } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
+
+import { IEmailData } from './api/sendEmail'
+import makeTitle from '../util/makeTitle'
 
 import LoadingButton from '../components/LoadingButton'
 import TopNav from '../components/TopNav'
 import Footer from '../components/Sections/Footer'
-
-import makeTitle from '../util/makeTitle'
 
 const DOCUMENT_TITLE: string = 'Contact'
 
@@ -24,6 +25,7 @@ interface IState {
     error: string
     invalidEmail: boolean
     formData: IFormData
+    reCaptchaValue: string
     success: boolean
     uploading: boolean
 }
@@ -34,7 +36,8 @@ class ContactPage extends React.Component {
         invalidEmail: false,
         formData: { name: '', email: '', schoolName: '', message: '' },
         success: false,
-        uploading: false
+        uploading: false,
+        reCaptchaValue: null
     }
 
     reCaptchaRef: React.RefObject<any> = React.createRef()
@@ -61,7 +64,8 @@ class ContactPage extends React.Component {
             subject: this.state.formData.schoolName,
             senderEmail: this.state.formData.email,
             sender: this.state.formData.name,
-            body: this.state.formData.message
+            body: this.state.formData.message,
+            reCaptchaValue: this.state.reCaptchaValue
         }
         this.setState({ uploading: true, invalidEmail: false, error: null })
         axios.post('/api/sendEmail', data).then(() => {
@@ -92,8 +96,8 @@ class ContactPage extends React.Component {
         }))
     }
 
-    handleReCaptchaChange = (token: string) => {
-        console.log('ReCAPTCHA value:', token)
+    handleReCaptchaChange = (reCaptchaValue: string) => {
+        this.setState({ reCaptchaValue })
     }
 
     render() {
@@ -158,12 +162,6 @@ class ContactPage extends React.Component {
                                         sitekey='6LfMuiYTAAAAAK_X3hkGwy6KNlxahC9_5PySJeqm'
                                         onChange={this.handleReCaptchaChange}
                                     />
-                                    {this.state.error && (
-                                        <p className='error'>{this.state.error}</p>
-                                    )}
-                                    {this.state.success && (
-                                        <p className='success'>Thanks for reaching out! We'll be sure to keep in touch.</p>
-                                    )}
                                     <LoadingButton
                                         loading={this.state.uploading}
                                         variant='contained'

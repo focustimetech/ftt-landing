@@ -1,6 +1,3 @@
-
-
-
 import aws from 'aws-sdk'
 import { NextApiRequest, NextApiResponse } from 'next'
 
@@ -11,6 +8,14 @@ const RECIPIENTS: string[] = [
 
 aws.config.loadFromPath('aws/config.json')
 const ses = new aws.SES()
+
+export interface IEmailData {
+    subject: string
+    body: string
+    sender: string
+    senderEmail: string
+    reCaptchaValue: string
+}
 
 const sendEmailRequest = (request: NextApiRequest, response: NextApiResponse) => {
     const { subject, body, sender, senderEmail } = request.body
