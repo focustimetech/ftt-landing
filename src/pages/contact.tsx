@@ -195,11 +195,13 @@ class ContactPage extends React.Component {
                                         multiline
                                         fullWidth
                                     />
-                                    <ReCAPTCHA
-                                        ref={this.reCaptchaRef}
-                                        sitekey={ReCAPTCHA_SITEKEY}
-                                        onChange={this.handleReCaptchaChange}
-                                    />
+                                    <div className='recaptcha_container'>
+                                        <ReCAPTCHA
+                                            ref={this.reCaptchaRef}
+                                            sitekey={ReCAPTCHA_SITEKEY}
+                                            onChange={this.handleReCaptchaChange}
+                                        />
+                                    </div>
                                     <LoadingButton
                                         loading={this.state.uploading}
                                         variant='contained'
