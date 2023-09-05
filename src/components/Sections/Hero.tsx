@@ -1,24 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
-import TextLoop from 'react-text-loop'
 
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 
 import TopNav from '../TopNav'
 
-const messages: string[] = [
-    'empowering students.',
-    'innovating.',
-    "your school's needs.",
-    'learning.',
-    'teaching.',
-    'what matters.',
-    'administrating.'
-]
+interface IHeroProps {
+    heroKeyword: string;
+}
 
-const Loop = TextLoop as any
-
-const Hero = () => {
+const Hero = (props: IHeroProps) => {
         return (
             <section id='hero' className='section hero_section --fit-content --topnav'>
                 <TopNav onHero visible/>
@@ -27,7 +18,7 @@ const Hero = () => {
                         <div className='focus'>
                             <h6>Focus on</h6>
                             <h6 className='loop'>
-                                <Loop interval={1500} noWrap={true} children={messages} />
+                                {props.heroKeyword}
                             </h6>
                         </div>
                         <h6 className='tagline'>We create platforms where educators and students can share information and get smarter together.</h6>

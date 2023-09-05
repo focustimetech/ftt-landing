@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import TopNav from '../components/TopNav'
 import Contact from '../components/Sections/Contact'
@@ -12,9 +11,6 @@ const DOCUMENT_TITLE: string = 'Our Story'
 const OurStoryPage = () => {
     return (
         <>
-            <Helmet>
-                <title>{makeTitle(DOCUMENT_TITLE)}</title>
-            </Helmet>
             <div className='site_page'>
                 <div>
                     <TopNav visible />

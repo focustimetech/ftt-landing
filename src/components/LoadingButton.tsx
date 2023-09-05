@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Button, CircularProgress } from '@material-ui/core'
-import { ButtonProps } from '@material-ui/core/Button'
+import { Button, CircularProgress } from '@mui/material'
+import { ButtonProps } from '@mui/material/Button'
 
 interface IProps extends ButtonProps {
     loading: boolean

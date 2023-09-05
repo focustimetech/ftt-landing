@@ -15,6 +15,7 @@ import MenuWidget from '../components/MenuWidget'
 
 interface IProps {
     onMenuOpen: () => void
+    heroKeyword: string
 }
 
 interface IState {
@@ -47,7 +48,7 @@ class LandingPage extends React.Component<IProps> {
             <div className='site_page'>
                 <div>
                     <TopNav fixed visible={this.state.showTopNav} />
-                    <Hero />
+                    <Hero heroKeyword={this.props.heroKeyword} />
                     <WhatWeDo />
                     <Testimonial
                         name='Melanie Paas'
@@ -78,3 +79,23 @@ class LandingPage extends React.Component<IProps> {
 }
 
 export default LandingPage
+
+export async function getServerSideProps() {
+    const messages: string[] = [
+        'empowering students.',
+        'innovating.',
+        "your school's needs.",
+        'learning.',
+        'teaching.',
+        'what matters.',
+        'administrating.'
+    ];
+    const randomIndex = Math.floor(Math.random() * messages.length);
+
+    // Return the data as props
+    return {
+      props: {
+        heroKeyword: messages[randomIndex],
+      },
+    };
+  }

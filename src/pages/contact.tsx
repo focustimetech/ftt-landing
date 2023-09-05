@@ -1,9 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import ReCAPTCHA from 'react-google-recaptcha'
 
-import { Snackbar, TextField } from '@material-ui/core'
+import { Snackbar, TextField } from '@mui/material'
 
 import makeTitle from '../util/makeTitle'
 
@@ -30,7 +28,6 @@ interface IFormData {
 interface IState {
     invalidEmail: boolean
     formData: IFormData
-    reCaptchaValue: string
     uploading: boolean
     snackbarOpen: boolean
     snackbarMessage?: ISnackbarMessage
@@ -41,11 +38,9 @@ class ContactPage extends React.Component {
         invalidEmail: false,
         formData: { name: '', email: '', schoolName: '', message: '' },
         uploading: false,
-        reCaptchaValue: null,
         snackbarOpen: false
     }
 
-    reCaptchaRef: React.RefObject<any> = React.createRef()
     queueRef: React.MutableRefObject<ISnackbarMessage[]> = React.createRef<ISnackbarMessage[]>()
 
     emailInvalid = (): boolean => {
@@ -71,7 +66,6 @@ class ContactPage extends React.Component {
             senderEmail: this.state.formData.email,
             sender: this.state.formData.name,
             body: this.state.formData.message,
-            reCaptchaValue: this.state.reCaptchaValue
         }
         this.setState({ uploading: true, invalidEmail: false, error: null })
         axios.post('/api/sendEmail', data).then(() => {
@@ -80,7 +74,6 @@ class ContactPage extends React.Component {
                 uploading: false,
                 formData: { ...state.formData, message: '' }
             }))
-            this.reCaptchaRef.current.reset() // Reset the ReCAPTCHA
         }, () => {
             this.handleQueueSnackbar("That didn't work. Please try again")
             this.setState({ uploading: false })
@@ -141,9 +134,6 @@ class ContactPage extends React.Component {
     render() {
         return (
             <>
-                <Helmet>
-                    <title>{makeTitle(DOCUMENT_TITLE)}</title>
-                </Helmet>
                 <div className='site_page'>
                     <div className='--maximize-footer'>
                         <TopNav visible />
@@ -195,19 +185,11 @@ class ContactPage extends React.Component {
                                         multiline
                                         fullWidth
                                     />
-                                    <div className='recaptcha_container'>
-                                        <ReCAPTCHA
-                                            ref={this.reCaptchaRef}
-                                            sitekey={ReCAPTCHA_SITEKEY}
-                                            onChange={this.handleReCaptchaChange}
-                                        />
-                                    </div>
                                     <LoadingButton
                                         loading={this.state.uploading}
                                         variant='contained'
                                         color='primary'
                                         type='submit'
-                                        disabled={!this.state.reCaptchaValue}
                                     >Send</LoadingButton>
                                 </form>
                             </div>
@@ -217,7 +199,7 @@ class ContactPage extends React.Component {
                                 autoHideDuration={6000}
                                 message={this.state.snackbarMessage ? this.state.snackbarMessage.message : undefined}
                                 onClose={this.handleCloseSnackbar}
-                                onExited={this.processSnackbarQueue}
+                                // onExited={this.processSnackbarQueue}
                             />
                         </section>
                         <Footer />

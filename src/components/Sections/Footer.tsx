@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
 
-import Link from '../Link'
+// import Link from '../Link'
 
 const Footer = () => {
     return (
@@ -11,9 +12,9 @@ const Footer = () => {
                     <span className='copyright'>© 2020</span>
                 </div>
                 <ul className='footer__menu'>
-                    <Link href='our-story'><li>Our Story</li></Link>
-                    <Link href='spotlight'><li>Spotlight</li></Link>
-                    <Link href='contact'><li>Contact</li></Link>
+                    <Link className='next-link' href='our-story'><li>Our Story</li></Link>
+                    <Link className='next-link' href='spotlight'><li>Spotlight</li></Link>
+                    <Link className='next-link' href='contact'><li>Contact</li></Link>
                 </ul>
             </div>
         </section>

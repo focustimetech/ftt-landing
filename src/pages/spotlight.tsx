@@ -1,7 +1,6 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 
 import Contact from '../components/Sections/Contact'
 import Footer from '../components/Sections/Footer'
@@ -17,9 +16,6 @@ const DOCUMENT_TITLE: string = 'Spotlight'
 const SpotlightPage = () => {
     return (
         <>
-            <Helmet>
-                <title>{makeTitle(DOCUMENT_TITLE)}</title>
-            </Helmet>
             <div className='site-page'>
                 <div>
                     <TopNav visible />

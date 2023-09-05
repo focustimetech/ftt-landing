@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 
-import Link from './Link'
+// import Link from './Link'
 import MenuWidget from './MenuWidget'
+import Link from 'next/link'
 
 interface IProps {
     onHero?: boolean
@@ -28,9 +29,6 @@ const TopNav = (props: IProps) => {
                     <Link href='contact'><li>Contact</li></Link>
                 </ul>
                 <ul className='topnav__menu_list'>
-                    {/*
-                    <li><a className='link' href='your-school'>Sign In</a></li>
-                    */}
                     <li><Button variant='contained' color={props.onHero ? 'secondary' : 'primary'} href='contact'>Book a Demo</Button></li>
                 </ul>
                 <a onClick={() => setMenuOpen(true)} className='menu_button'>
