@@ -7,7 +7,7 @@ interface IProps extends ButtonProps {
     loading: boolean
 }
 
-const LoadingButton: React.SFC<IProps> = (props) => {
+const LoadingButton = (props: IProps) => {
     const { disabled, loading, ...rest } = props
     return (
         <div className='button-container'>
