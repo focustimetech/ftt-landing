@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
+import FocusTimeImage from '../../../public/images/focustime.jpg'
 
 const OurStory = () => {
     return (
@@ -8,7 +10,7 @@ const OurStory = () => {
                 <h1>Our Story</h1>
                 <div className='flexbox'>
                     <div className='--image'>
-                        <img src='images/focustime.jpg' />
+                        <Image width={720} src={FocusTimeImage} alt='Focustime' />
                     </div>
                     <div>
                         <h2>We are Focustime.</h2>

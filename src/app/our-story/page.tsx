@@ -3,6 +3,12 @@ import React from 'react'
 import TopNav from '../../components/TopNav'
 import Contact from '../../components/Sections/Contact'
 import Footer from '../../components/Sections/Footer'
+import Image from 'next/image'
+
+import FocusTimeImage from '../../../public/images/focustime3.jpg';
+import VladImage from '../../../public/images/vlad.jpg';
+import CurtisImage from '../../../public/images/curtis.jpg';
+
 
 import { makeTitle, makeDescription } from '../../util/document'
 
@@ -29,7 +35,7 @@ const OurStoryPage = async () => {
                                     <p>With the need for a new attendance solution we created the first version of Spotlight, which went on to be used by our school the following year. Since then, we have been continuously improving the platform and adding new tools for teachers, students and administrators.</p>
                                 </div>
                                 <div className='--image'>
-                                    <img src='images/focustime3.jpg' />
+                                    <Image src={FocusTimeImage} width={720} alt='Focustime' />
                                 </div>
                             </div>
                         </div>
@@ -38,7 +44,7 @@ const OurStoryPage = async () => {
                         <div className='section__inner'>
                             <div className='profile'>
                                 <div className='photo'>
-                                    <img src='images/vlad.jpg' />
+                                    <Image src={VladImage} width={480} alt='Vlad Lyesin' />
                                 </div>
                                 <div>
                                     <h2>
@@ -53,7 +59,7 @@ const OurStoryPage = async () => {
                             </div>
                             <div className='profile'>
                                 <div className='photo'>
-                                    <img src='images/curtis.jpg' />
+                                    <Image src={CurtisImage} width={480} alt='Curtis Upshall' />
                                 </div>
                                 <div>
                                     <h2>

@@ -10,6 +10,14 @@ import Testimonial from '../../components/Testimonial'
 
 import { makeTitle, makeDescription } from '../../util/document'
 
+// Images
+import JeffImage from '../../../public/images/testimonials/jeff.jpg';
+import Screenshot1Image from '../../../public/images/demo/screenshot1.jpg';
+import Screenshot2Image from '../../../public/images/demo/screenshot2.jpg';
+import Screenshot3Image from '../../../public/images/demo/screenshot3.jpg';
+
+import Image from 'next/image'
+
 const disableContact = process.env.DISABLE_CONTACT === 'true'
 
 const DOCUMENT_TITLE: string = 'Spotlight'
@@ -45,7 +53,7 @@ const SpotlightPage = async () => {
                                     <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                                 </div>
                                 <div className='--image'>
-                                    <img className='screenshot' src='images/demo/screenshot1.jpg' />
+                                    <Image className='screenshot' width={720} alt='Spotlight' src={Screenshot1Image} />
                                 </div>
                             </div>
                         </div>
@@ -54,7 +62,7 @@ const SpotlightPage = async () => {
                         <div className='section__inner'>
                             <div className='flexbox'>
                                 <div className='--image'>
-                                    <img className='screenshot' src='images/demo/screenshot2.jpg' />
+                                    <Image className='screenshot' width={720} alt='Spotlight' src={Screenshot2Image} />
                                 </div>
                                 <div>
                                     <h2 className='icon_header'><Icon>double_arrow</Icon>Stay on Track</h2>
@@ -79,7 +87,7 @@ const SpotlightPage = async () => {
                                     <p>Spotlight is accessable and easy to access for students using a mobile phone or computer — at school or from home.</p>
                                 </div>
                                 <div className='--image'>
-                                    <img className='screenshot' src='images/demo/screenshot3.jpg' />
+                                    <Image className='screenshot' width={720} alt='Spotlight' src={Screenshot3Image} />
                                 </div>
                             </div>
                         </div>
@@ -87,8 +95,12 @@ const SpotlightPage = async () => {
                     <Testimonial
                         name='Jeff Laird'
                         source='Teacher, School District 61'
-                        image='images/testimonials/jeff.jpg'
-                        quote={`It's been called "the gift of time" at Oak Bay - to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.`}
+                        image={JeffImage}
+                        quote={
+                            <>
+                                It's been called "the gift of time" at Oak Bay &ndash; to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.
+                            </>
+                        }
                     />
                     {disableContact ? undefined : <Contact />}
                     <Footer />

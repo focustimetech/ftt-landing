@@ -4,6 +4,8 @@ import Icon from '../Icon'
 import Mailer from './Mailer'
 import Link from 'next/link'
 import clsx from 'clsx'
+import Image from 'next/image'
+import Screenshot1Image from '../../../public/images/demo/screenshot1.jpg'
 
 const Spotlight = () => {
     return (
@@ -28,7 +30,7 @@ const Spotlight = () => {
                             <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                         </div>
                         <div className='--image'>
-                            <img className='screenshot' src='images/demo/screenshot1.jpg' />
+                            <Image className='screenshot' width={720} src={Screenshot1Image} alt='Spotlight' />
                         </div>
                     </div>
                 </div>
