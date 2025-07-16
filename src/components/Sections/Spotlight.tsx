@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Icon from '../Icon'
 import Mailer from './Mailer'
 import Link from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Screenshot1Image from '../../../public/images/demo/screenshot1.jpg'
+import { Cloud, DataUsage, Security } from '@mui/icons-material'
 
 const Spotlight = () => {
     return (
@@ -22,11 +22,11 @@ const Spotlight = () => {
                 <div className='section__inner'>
                     <div className='flexbox'>
                         <div>
-                            <h2 className='icon_header'><Icon>cloud</Icon>Declutter</h2>
+                            <h2 className='icon_header'><Cloud />Declutter</h2>
                             <p>Transitioning from a paper-based ledger can be difficult. Spotlight enables the process of switching to a cloud-based system easy.</p>
-                            <h2 className='icon_header'><Icon>security</Icon>Security</h2>
+                            <h2 className='icon_header'><Security />Security</h2>
                             <p>Data security and integrity is our biggest priority. We work to comply with all school and district level regulations.</p>
-                            <h2 className='icon_header'><Icon>data_usage</Icon>Better Data</h2>
+                            <h2 className='icon_header'><DataUsage />Better Data</h2>
                             <p>Spotlight allows for administrators to zoom in on the classroom, getting better data on how students and teachers are using their time during self-directed blocks.</p>
                         </div>
                         <div className='--image'>

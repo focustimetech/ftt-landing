@@ -151,10 +151,7 @@ h1 {
 .icon_header {
     display: flex;
     align-items: center;
-
-    & > span {
-        margin-right: 0.375em;
-    }
+    gap: 0.375em;
 }
 
 .next-link {
