@@ -23,7 +23,7 @@ export const metadata = {
     description: makeDescription(),
 }
 
-const disableContact = process.env.DISABLE_CONTACT === 'true'
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
 
 const LandingPage = async () => {
     const heroTexts = await getHeroText();

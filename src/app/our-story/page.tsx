@@ -12,7 +12,7 @@ import CurtisImage from '../../../public/images/curtis.jpg';
 
 import { makeTitle, makeDescription } from '../../util/document'
 
-const disableContact = process.env.DISABLE_CONTACT === 'true'
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
 
 export const metadata = {
     title: makeTitle('Our Story'),

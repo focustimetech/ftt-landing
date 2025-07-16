@@ -18,7 +18,8 @@ import Screenshot3Image from '../../../public/images/demo/screenshot3.jpg';
 import Image from 'next/image'
 import { Cached, Cloud, DataUsage, DoubleArrow, HowToReg, LocalCafe, Security, ThumbUp, Today } from '@mui/icons-material'
 
-const disableContact = process.env.DISABLE_CONTACT === 'true'
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
+const disableCta = process.env.NEXT_PUBLIC_DISABLE_CTA === 'true'
 
 const DOCUMENT_TITLE: string = 'Spotlight'
 
@@ -38,7 +39,9 @@ const SpotlightPage = async () => {
                             <h1>Spotlight</h1>
                             <h2>Smart attendance for focus blocks.</h2>
                             <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                            <Button variant='contained' color='primary' href='contact'>Book a Demo</Button>
+                            {!disableCta && (
+                                <Button variant='contained' color='primary' href='/contact'>Book a Demo</Button>
+                            )}
                         </div>
                     </section>
                     <section className='section --fit-content'>

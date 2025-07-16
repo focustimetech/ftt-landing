@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Snackbar, TextField } from '@mui/material'
 import LoadingButton from './LoadingButton'
 
-const ReCAPTCHA_SITEKEY: string = process.env.RECAPTCHA_SITEKEY || ''
+const ReCAPTCHA_SITEKEY: string = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || ''
 
 interface ISnackbarMessage {
   message: string
@@ -27,6 +27,8 @@ interface IState {
   snackbarOpen: boolean
   snackbarMessage?: ISnackbarMessage
 }
+
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
 
 const ContactForm = () => {
   const [state, setState] = useState<IState>({
@@ -175,8 +177,12 @@ const ContactForm = () => {
           multiline
           fullWidth
         />
+        {disableContact && (
+          <p>Contact form is disabled.</p>
+        )}
         <LoadingButton
           loading={state.uploading}
+          disabled={disableContact}
           variant='contained'
           color='primary'
           type='submit'
