@@ -5,7 +5,9 @@
     &__logo {
         height: 3rem;
         display: flex;
-        align-items: center;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 0.5rem;
 
         img {
             height: 100%;
@@ -17,6 +19,7 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        gap: 1rem;
     }
 
     &__menu {
@@ -38,17 +41,19 @@
             text-align: left;
         }
 
+        &__logo {
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
         &__inner {
-            justify-content: start;
+            justify-content: space-between;
         }
 
         &__inner,
         &__menu {
             align-items: center;
-
-            & > * + * {
-                margin-left: 1rem;
-            }
+            gap: 2rem;
         }
     }
 }

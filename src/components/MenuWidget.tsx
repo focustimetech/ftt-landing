@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,7 +12,7 @@ interface IProps {
 const MenuWidget = (props: IProps) => {
     return (
         <>
-            <div className={classNames('menu', {'--open': props.open})}>
+            <div className={clsx('menu', {'--open': props.open})}>
                 <div className='menu__inner'>
                     <div className='menu__header'>
                         <Link href='/'>

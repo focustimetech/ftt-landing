@@ -1,19 +1,24 @@
 import React from 'react'
 
-import TopNav from '../components/TopNav'
-import Contact from '../components/Sections/Contact'
-import Footer from '../components/Sections/Footer'
+import TopNav from '../../components/TopNav'
+import Contact from '../../components/Sections/Contact'
+import Footer from '../../components/Sections/Footer'
 
-import makeTitle from '../util/makeTitle'
+import { makeTitle, makeDescription } from '../../util/document'
 
-const DOCUMENT_TITLE: string = 'Our Story'
+const disableContact = process.env.DISABLE_CONTACT === 'true'
 
-const OurStoryPage = () => {
+export const metadata = {
+    title: makeTitle('Our Story'),
+    description: makeDescription(),
+}
+
+const OurStoryPage = async () => {
     return (
         <>
             <div className='site_page'>
                 <div>
-                    <TopNav visible />
+                    <TopNav static />
                     <section className='section --fit-content'>
                         <div className='section__inner'>
                             <h1>Our Story</h1>
@@ -63,7 +68,7 @@ const OurStoryPage = () => {
                             </div>
                         </div>
                     </section>
-                    <Contact />
+                    {disableContact ? undefined : <Contact />}
                     <Footer />
                 </div>
             </div>

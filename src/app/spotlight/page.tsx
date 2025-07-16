@@ -1,24 +1,30 @@
-import React from 'react'
 
 import { Button } from '@mui/material'
 
-import Contact from '../components/Sections/Contact'
-import Footer from '../components/Sections/Footer'
+import Contact from '../../components/Sections/Contact'
+import Footer from '../../components/Sections/Footer'
 
-import TopNav from '../components/TopNav'
-import Icon from '../components/Icon'
-import Testimonial from '../components/Testimonial'
+import TopNav from '../../components/TopNav'
+import Icon from '../../components/Icon'
+import Testimonial from '../../components/Testimonial'
 
-import makeTitle from '../util/makeTitle'
+import { makeTitle, makeDescription } from '../../util/document'
+
+const disableContact = process.env.DISABLE_CONTACT === 'true'
 
 const DOCUMENT_TITLE: string = 'Spotlight'
 
-const SpotlightPage = () => {
+export const metadata = {
+    title: makeTitle(DOCUMENT_TITLE),
+    description: makeDescription(),
+}
+
+const SpotlightPage = async () => {
     return (
         <>
             <div className='site-page'>
                 <div>
-                    <TopNav visible />
+                    <TopNav static />
                     <section className='section --fit-content'>
                         <div className='section__inner'>
                             <h1>Spotlight</h1>
@@ -84,7 +90,7 @@ const SpotlightPage = () => {
                         image='images/testimonials/jeff.jpg'
                         quote={`It's been called "the gift of time" at Oak Bay - to let kids do what they're excited about, what they're passionate about and to get the learning support that they need from teachers. Spotlight is a great accountability mechanism. It's great being able to see where kids are going and to help kids plan out their days and take responsibility for their learning.`}
                     />
-                    <Contact />
+                    {disableContact ? undefined : <Contact />}
                     <Footer />
                 </div>
             </div>

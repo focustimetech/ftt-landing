@@ -3,6 +3,7 @@ import React from 'react'
 import Icon from '../Icon'
 import Mailer from './Mailer'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 const Spotlight = () => {
     return (
@@ -12,7 +13,7 @@ const Spotlight = () => {
                     <h1>Spotlight</h1>
                     <h2>Smart attendance for focus blocks.</h2>
                     <p>Spotlight is a digital interface that provides administrators, teachers and students with powerful tools for self-directed study blocks.</p>
-                    <Link legacyBehavior className='next-link' href='spotlight'><a className='link --on-primary'>Read More</a></Link>
+                    <Link className={clsx('next-link link --on-primary')} href='/spotlight'>Read More</Link>
                 </div>
             </section>
             <section className='section spotlight_section --fit-content'>

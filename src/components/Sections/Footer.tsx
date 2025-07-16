@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='footer__inner'>
                 <div className='footer__logo'>
                     <img src='images/ft-white.png' />
-                    <span className='copyright'>© 2020</span>
+                    <span className='copyright'>© 2020 &ndash; {new Date().getFullYear()}</span>
                 </div>
                 <ul className='footer__menu'>
                     <Link className='next-link' href='our-story'><li>Our Story</li></Link>
