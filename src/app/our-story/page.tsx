@@ -1,19 +1,30 @@
 import React from 'react'
 
-import TopNav from '../components/TopNav'
-import Contact from '../components/Sections/Contact'
-import Footer from '../components/Sections/Footer'
+import TopNav from '../../components/TopNav'
+import Contact from '../../components/Sections/Contact'
+import Footer from '../../components/Sections/Footer'
+import Image from 'next/image'
 
-import makeTitle from '../util/makeTitle'
+import FocusTimeImage from '../../../public/images/focustime3.jpg';
+import VladImage from '../../../public/images/vlad.jpg';
+import CurtisImage from '../../../public/images/curtis.jpg';
 
-const DOCUMENT_TITLE: string = 'Our Story'
 
-const OurStoryPage = () => {
+import { makeTitle, makeDescription } from '../../util/document'
+
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
+
+export const metadata = {
+    title: makeTitle('Our Story'),
+    description: makeDescription(),
+}
+
+const OurStoryPage = async () => {
     return (
         <>
             <div className='site_page'>
                 <div>
-                    <TopNav visible />
+                    <TopNav static />
                     <section className='section --fit-content'>
                         <div className='section__inner'>
                             <h1>Our Story</h1>
@@ -24,7 +35,7 @@ const OurStoryPage = () => {
                                     <p>With the need for a new attendance solution we created the first version of Spotlight, which went on to be used by our school the following year. Since then, we have been continuously improving the platform and adding new tools for teachers, students and administrators.</p>
                                 </div>
                                 <div className='--image'>
-                                    <img src='images/focustime3.jpg' />
+                                    <Image src={FocusTimeImage} width={720} alt='Focustime' />
                                 </div>
                             </div>
                         </div>
@@ -33,7 +44,7 @@ const OurStoryPage = () => {
                         <div className='section__inner'>
                             <div className='profile'>
                                 <div className='photo'>
-                                    <img src='images/vlad.jpg' />
+                                    <Image src={VladImage} width={480} alt='Vlad Lyesin' />
                                 </div>
                                 <div>
                                     <h2>
@@ -48,7 +59,7 @@ const OurStoryPage = () => {
                             </div>
                             <div className='profile'>
                                 <div className='photo'>
-                                    <img src='images/curtis.jpg' />
+                                    <Image src={CurtisImage} width={480} alt='Curtis Upshall' />
                                 </div>
                                 <div>
                                     <h2>
@@ -63,7 +74,7 @@ const OurStoryPage = () => {
                             </div>
                         </div>
                     </section>
-                    <Contact />
+                    {disableContact ? undefined : <Contact />}
                     <Footer />
                 </div>
             </div>

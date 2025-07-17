@@ -4,6 +4,20 @@
     overflow: hidden;
     //padding: 0 !important;
 
+    .hero_title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+    }
+
     .hero__container {
         font-size: 3em;
         position: relative;
@@ -43,15 +57,11 @@
                 }
             }
         }
-
-        
-
-        
     }
 
     .focus {
         font-size: 1em;
-        line-height: 1em;
+        line-height: 0.5em;
         margin-bottom: 1rem;
         color: $on-primary;
 
@@ -59,20 +69,19 @@
             font-size: 1.25em;
         }
 
-        h6 {
+        span {
+            font-size: 0.67em;
             margin: 0;
-            
-            &:first-child {
-                line-height: 0.875em;
-            }
         }
 
         .loop {
             color: $secondary;
+            white-space: nowrap;
         }
     }
 
     .tagline {
+        margin-top: 4rem;
         font-size: 0.425em;
         font-weight: 400;
     }

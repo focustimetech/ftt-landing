@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,10 +9,12 @@ interface IProps {
     onClose: () => void
 }
 
+const disableContact = process.env.NEXT_PUBLIC_DISABLE_CONTACT === 'true'
+
 const MenuWidget = (props: IProps) => {
     return (
         <>
-            <div className={classNames('menu', {'--open': props.open})}>
+            <div className={clsx('menu', {'--open': props.open})}>
                 <div className='menu__inner'>
                     <div className='menu__header'>
                         <Link href='/'>
@@ -23,9 +25,11 @@ const MenuWidget = (props: IProps) => {
                         </a>
                     </div>
                     <ul className='menu__list'>
-                        <Link href='our-story'><li>Our Story</li></Link>
-                        <Link href='spotlight'><li>Spotlight</li></Link>
-                        <Link href='contact'><li>Contact</li></Link>
+                        <Link href='/our-story'><li>Our Story</li></Link>
+                        <Link href='/spotlight'><li>Spotlight</li></Link>
+                        {!disableContact && (
+                            <Link href='/contact'><li>Contact</li></Link>
+                        )}
                     </ul>
                 </div>
             </div>

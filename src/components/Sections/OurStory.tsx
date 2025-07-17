@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
+import FocusTimeImage from '../../../public/images/focustime.jpg'
 
 const OurStory = () => {
     return (
@@ -8,12 +10,12 @@ const OurStory = () => {
                 <h1>Our Story</h1>
                 <div className='flexbox'>
                     <div className='--image'>
-                        <img src='images/focustime.jpg' />
+                        <Image width={720} src={FocusTimeImage} alt='Focustime' />
                     </div>
                     <div>
                         <h2>We are Focustime.</h2>
                         <p>We are a team of Victoria high school grads who are showcasing the value of our education. We’ve experienced first hand the challenges that educators have collecting data and making sense of it. Our technology fills the gap.  Not only do we create the platforms, but we also guide the analysis of the data for the benefit of both school and student.</p>
-                        <Link legacyBehavior href='our-story'><a className='link'>Read More</a></Link>
+                        <Link href='/our-story' className='link'>Read More</Link>
                     </div>
                 </div>
             </div>
